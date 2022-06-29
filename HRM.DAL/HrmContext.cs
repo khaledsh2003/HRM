@@ -13,7 +13,6 @@ namespace HRM.DAL
         {
 
         }
-
         public DbSet<UserEntity> Users  { get; set; }
         public DbSet<VacationEntity> Vacations { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
