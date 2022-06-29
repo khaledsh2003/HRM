@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM.WebApi\\HRM.DAL\\HRM.DAL.csproj": {}
+    "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM.WebApi\\HRM.DAL\\HRM.DAL.csproj": {
+    "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM.WebApi\\HRM.DAL\\HRM.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj",
         "projectName": "HRM.DAL",
-        "projectPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM.WebApi\\HRM.DAL\\HRM.DAL.csproj",
-        "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM.WebApi\\HRM.DAL\\obj\\",
+        "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj",
+        "packagesPath": "C:\\Users\\kshah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kshah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
