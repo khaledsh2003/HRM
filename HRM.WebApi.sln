@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.WebApi", "HRM.WebApi\HRM.WebApi.csproj", "{70439537-2E61-4161-852D-D490E00BA5A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.DAL", "HRM.DAL\HRM.DAL.csproj", "{371DE877-97B3-485D-860C-74049A921BEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{70439537-2E61-4161-852D-D490E00BA5A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70439537-2E61-4161-852D-D490E00BA5A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70439537-2E61-4161-852D-D490E00BA5A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{371DE877-97B3-485D-860C-74049A921BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{371DE877-97B3-485D-860C-74049A921BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{371DE877-97B3-485D-860C-74049A921BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{371DE877-97B3-485D-860C-74049A921BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

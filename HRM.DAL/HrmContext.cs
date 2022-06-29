@@ -21,5 +21,6 @@ namespace HRM.DAL
 
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LMS;Integrated Security=True");
         }
+
     }
 }

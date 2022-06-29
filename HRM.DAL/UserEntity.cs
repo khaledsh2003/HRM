@@ -10,7 +10,6 @@ namespace HRM.DAL
 {
     public class UserEntity
     {
-
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public Guid UserID {get;set;} 
@@ -21,6 +20,5 @@ namespace HRM.DAL
         public string JobTitle { get; set; }
         public Guid? ManagerID { get; set; }
 
-        
     }
 }
