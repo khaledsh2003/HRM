@@ -1,3 +1,5 @@
+using HRM.BL.Interface;
+using HRM.BL.Managers;
 using HRM.DAL.EF;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +10,8 @@ var connectionString = builder.Configuration.GetConnectionString("HRM");
 builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
+builder.Services.AddTransient<IUserManager, UserSqlManager>();
+builder.Services.AddTransient<IVacationManager, VacationSqlManager>();
 builder.Services.AddDbContext<HrmContext>(options =>
             options.UseSqlServer(connectionString));
 

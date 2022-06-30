@@ -5,9 +5,9 @@ namespace HRM.BL.Interface
     public interface IUserManager
     {
         public UserDto Create(UserDto user);
-        public UserDto GetByID(int id);
+        public UserDto GetByID(Guid id);
         public List<UserDto> GetUsersList();
         public UserDto Update(UserDto user);
-        public bool Delete(int id);
+        public bool Delete(Guid id);
     }
 }
