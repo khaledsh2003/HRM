@@ -669,7 +669,7 @@
           }
         }
       },
-      "HRM.DAL/1.0.0": {
+      "HRM.DAL.EF/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -677,10 +677,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6"
         },
         "compile": {
-          "bin/placeholder/HRM.DAL.dll": {}
+          "bin/placeholder/HRM.DAL.EF.dll": {}
         },
         "runtime": {
-          "bin/placeholder/HRM.DAL.dll": {}
+          "bin/placeholder/HRM.DAL.EF.dll": {}
         }
       }
     }
@@ -1973,15 +1973,15 @@
         "version.txt"
       ]
     },
-    "HRM.DAL/1.0.0": {
+    "HRM.DAL.EF/1.0.0": {
       "type": "project",
-      "path": "../HRM.DAL/HRM.DAL.csproj",
-      "msbuildProject": "../HRM.DAL/HRM.DAL.csproj"
+      "path": "../HRM.DAL/HRM.DAL.EF.csproj",
+      "msbuildProject": "../HRM.DAL/HRM.DAL.EF.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "HRM.DAL >= 1.0.0",
+      "HRM.DAL.EF >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.6",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2013,8 +2013,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj": {
-              "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj"
+            "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.EF.csproj": {
+              "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.EF.csproj"
             }
           }
         }

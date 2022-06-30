@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace HRM.DAL
+namespace HRM.DAL.EF
 {
     public class HrmContext:DbContext
     {

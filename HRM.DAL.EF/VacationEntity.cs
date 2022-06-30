@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRM.DAL
+namespace HRM.DAL.EF
 {
     public class VacationEntity
     {
@@ -19,8 +19,10 @@ namespace HRM.DAL
         public int Duration { get; set; }
         public int Status { get; set; }
         public string Note { get; set; }
-       
+
         [ForeignKey("User")]
-        public Guid UserID { get; set; }
-        public virtual UserEntity User { get; set; }    
+        public Guid UserId { get; set; }
+        public virtual UserEntity User { get; set; }
+        //creation date
+    }
 }

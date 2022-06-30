@@ -1776,9 +1776,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj",
-      "projectName": "HRM.DAL",
-      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.EF.csproj",
+      "projectName": "HRM.DAL.EF",
+      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\HRM.DAL.EF.csproj",
       "packagesPath": "C:\\Users\\kshah\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL\\obj\\",
       "projectStyle": "PackageReference",

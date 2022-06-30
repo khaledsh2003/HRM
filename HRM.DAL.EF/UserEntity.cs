@@ -6,24 +6,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRM.DAL
+namespace HRM.DAL.EF
 {
     public class UserEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public Guid UserID {get;set;}
+        public Guid ID {get;set;}
         [MaxLength(50)]
         public string Name { get;set;}
         [MaxLength(70)]
         public string MobileNumber { get; set; }
         [MaxLength(100)]
         public string Email { get;set;}
-        [MaxLength(100)]
+        [MaxLength(100)]//for encry larger
         public string Password { get; set; }
         [MaxLength(70)]
         public string JobTitle { get; set; }
         public Guid? ManagerID { get; set; }
-
+        public DateTime CreattionDate { get; set; }
     }
 }
