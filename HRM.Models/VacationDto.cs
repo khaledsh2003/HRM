@@ -8,12 +8,12 @@ namespace HRM.Models
 {
     public class VacationDto
     {
-        public Guid ID { get; set; }
-        public int Type { get; set; }
-        public DateTime StartingDate { get; set; }
-        public int Duration { get; set; }
-        public int Status { get; set; }
-        public string Note { get; set; }
-        public Guid UserId { get; set; }
+        public Guid ID { get;}
+        public int Type { get; }
+        public DateTime StartingDate { get;}
+        public int Duration { get;}
+        public int Status { get;}
+        public string Note { get;}
+        public Guid UserId { get; }
     }
 }

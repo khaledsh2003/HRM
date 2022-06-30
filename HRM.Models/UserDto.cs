@@ -2,13 +2,13 @@
 {
     public class UserDto
     {
-        public Guid ID { get; set; }
-        public string Name { get; set; }
-        public string MobileNumber { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string JobTitle { get; set; }
-        public Guid ManagerID { get; set; }
+        public Guid ID { get;}
+        public string Name { get;}
+        public string MobileNumber { get;}
+        public string Email { get;}
+        public string Password { get;}
+        public string JobTitle { get;}
+        public Guid ManagerID { get;}
     }
 }
 

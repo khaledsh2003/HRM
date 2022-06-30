@@ -15,6 +15,7 @@ namespace HRM.DAL.EF
         public Guid ID {get;set;}
         [MaxLength(50)]
         public string Name { get;set;}
+        public bool Type { get; set; }
         [MaxLength(70)]
         public string MobileNumber { get; set; }
         [MaxLength(100)]
