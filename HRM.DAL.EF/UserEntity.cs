@@ -24,6 +24,6 @@ namespace HRM.DAL.EF
         [MaxLength(70)]
         public string JobTitle { get; set; }
         public Guid? ManagerID { get; set; }
-        public DateTime CreattionDate { get; set; }
+        public DateTime CreationDate { get; set; }
     }
 }
