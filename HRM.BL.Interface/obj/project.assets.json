@@ -11,6 +11,16 @@
         "runtime": {
           "bin/placeholder/HRM.Models.dll": {}
         }
+      },
+      "HRM.Responses/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HRM.Responses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HRM.Responses.dll": {}
+        }
       }
     }
   },
@@ -19,11 +29,17 @@
       "type": "project",
       "path": "../HRM.Models/HRM.Models.csproj",
       "msbuildProject": "../HRM.Models/HRM.Models.csproj"
+    },
+    "HRM.Responses/1.0.0": {
+      "type": "project",
+      "path": "../HRM.Responses/HRM.Responses.csproj",
+      "msbuildProject": "../HRM.Responses/HRM.Responses.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "HRM.Models >= 1.0.0"
+      "HRM.Models >= 1.0.0",
+      "HRM.Responses >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -55,6 +71,9 @@
           "projectReferences": {
             "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Models\\HRM.Models.csproj": {
               "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Models\\HRM.Models.csproj"
+            },
+            "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Responses\\HRM.Responses.csproj": {
+              "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Responses\\HRM.Responses.csproj"
             }
           }
         }

@@ -602,7 +602,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "HRM.Models": "1.0.0"
+          "HRM.Models": "1.0.0",
+          "HRM.Responses": "1.0.0"
         },
         "compile": {
           "bin/placeholder/HRM.BL.Interface.dll": {}

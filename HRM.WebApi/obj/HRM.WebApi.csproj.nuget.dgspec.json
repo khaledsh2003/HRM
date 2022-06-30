@@ -30,6 +30,9 @@
             "projectReferences": {
               "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Models\\HRM.Models.csproj": {
                 "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Models\\HRM.Models.csproj"
+              },
+              "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Responses\\HRM.Responses.csproj": {
+                "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Responses\\HRM.Responses.csproj"
               }
             }
           }

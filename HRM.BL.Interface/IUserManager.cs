@@ -1,4 +1,5 @@
 ﻿using HRM.Models;
+using HRM.Responses;
 
 namespace HRM.BL.Interface
 {
@@ -6,7 +7,7 @@ namespace HRM.BL.Interface
     {
         public UserDto Create(UserDto user);
         public UserDto GetByID(Guid id);
-        public List<UserDto> GetUsersList();
+        public Response<List<UserDto>> GetUsersList();
         public UserDto Update(UserDto user);
         public bool Delete(Guid id);
     }
