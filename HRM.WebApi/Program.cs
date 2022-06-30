@@ -1,4 +1,4 @@
-using HRM.DAL;
+using HRM.DAL.EF;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

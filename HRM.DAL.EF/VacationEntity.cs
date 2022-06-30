@@ -23,7 +23,7 @@ namespace HRM.DAL.EF
         [ForeignKey("User")]
         public Guid UserId { get; set; }
         public virtual UserEntity User { get; set; }
-        public DateTime CreattionDate { get; set; }
+        public DateTime CreationDate { get; set; }
 
     }
 }
