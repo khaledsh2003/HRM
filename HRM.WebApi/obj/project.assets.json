@@ -713,7 +713,8 @@
         "dependencies": {
           "HRM.BL.Interface": "1.0.0",
           "HRM.DAL.EF": "1.0.0",
-          "HRM.Mapping": "1.0.0"
+          "HRM.Mapping": "1.0.0",
+          "HRM.Responses": "1.0.0"
         },
         "compile": {
           "bin/placeholder/HRM.BL.Managers.dll": {}
@@ -758,6 +759,16 @@
         },
         "runtime": {
           "bin/placeholder/HRM.Models.dll": {}
+        }
+      },
+      "HRM.Responses/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HRM.Responses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HRM.Responses.dll": {}
         }
       }
     }
@@ -2105,6 +2116,11 @@
       "type": "project",
       "path": "../HRM.Models/HRM.Models.csproj",
       "msbuildProject": "../HRM.Models/HRM.Models.csproj"
+    },
+    "HRM.Responses/1.0.0": {
+      "type": "project",
+      "path": "../HRM.Responses/HRM.Responses.csproj",
+      "msbuildProject": "../HRM.Responses/HRM.Responses.csproj"
     }
   },
   "projectFileDependencyGroups": {

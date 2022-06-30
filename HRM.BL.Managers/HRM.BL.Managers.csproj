@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HRM.BL.Interface\HRM.BL.Interface.csproj" />
+    <ProjectReference Include="..\HRM.DAL.EF\HRM.DAL.EF.csproj" />
+    <ProjectReference Include="..\HRM.Mapping\HRM.Mapping.csproj" />
+    <ProjectReference Include="..\HRM.Responses\HRM.Responses.csproj" />
+  </ItemGroup>
+
 </Project>

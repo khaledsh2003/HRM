@@ -2,6 +2,7 @@
 using HRM.DAL.EF;
 using HRM.Mapping;
 using HRM.Models;
+using HRM.Responses;
 
 namespace HRM.BL.Managers
 {
@@ -10,6 +11,7 @@ namespace HRM.BL.Managers
         private readonly IUserManager _userManager;
         private readonly HrmContext _hrmContext;
         private UserEntityMapper _userEntityMapper;
+
         public UserSqlManager(IUserManager userManager,HrmContext hrmContext)
         {
             _userManager = userManager; 
@@ -42,21 +44,27 @@ namespace HRM.BL.Managers
                 return null;
             }
         }
-        public List<UserDto> GetUsersList()
+        public Response<List<UserDto>> GetUsersList()
         {
+            List<UserDto> _users = new List<UserDto>();
+            Response<List<UserDto>> response = new Response<List<UserDto>>();
             try
             {
-                List<UserDto> _users = new List<UserDto>();
                 var choosenUser = _hrmContext.Users.ToList();
                 foreach (var i in choosenUser)
                 {
                     _users.Add(_userEntityMapper.Map(i));
                 }
-                return _users;
+                //setting respone data
+                response.Data = _users;
+                return response;
             }
             catch (Exception ex)
             {
-                return null;
+                //setting error code and description if there is an error
+                response.ErrorCode= ex.HResult;
+                response.Description = ex.Message;
+                return response;
             }
         }
         public UserDto Update(UserDto user)

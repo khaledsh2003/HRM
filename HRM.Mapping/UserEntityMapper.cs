@@ -7,15 +7,17 @@ namespace HRM.Mapping
     {
         public UserDto Map(UserEntity user)
         {
-            var temp = new UserDto();
-            temp.ID = user.ID;
-            temp.Name = user.Name;
-            temp.Type = user.Type;
-            temp.MobileNumber = user.MobileNumber;
-            temp.Email = user.Email;
-            temp.Password = user.Password;
-            temp.JobTitle = user.JobTitle;
-            temp.ManagerID = user.ManagerID;
+            var temp = new UserDto
+            {
+                ID = user.ID,
+                Name = user.Name,
+                Type = user.Type,
+                MobileNumber = user.MobileNumber,
+                Email = user.Email,
+                Password = user.Password,
+                JobTitle = user.JobTitle,
+                ManagerID = user.ManagerID
+            };
             return temp;
         }
     }
