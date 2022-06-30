@@ -9,7 +9,6 @@
         public string Password { get; set; }
         public string JobTitle { get; set; }
         public Guid ManagerID { get; set; }
-        public DateTime CreationDate { get; set; }
         public UserDto()
         {
 
