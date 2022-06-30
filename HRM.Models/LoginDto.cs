@@ -10,15 +10,5 @@ namespace HRM.Models
     {
         public string UserName { get; set; }
         public string Password { get; set; }
-        public LoginDto()
-        {
-
-        }
-        public LoginDto(string userName,string password)
-        {
-            UserName = userName;
-            Password = password;
-        }
-
     }
 }

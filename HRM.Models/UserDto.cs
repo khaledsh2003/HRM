@@ -9,20 +9,6 @@
         public string Password { get; set; }
         public string JobTitle { get; set; }
         public Guid ManagerID { get; set; }
-        public UserDto()
-        {
-
-        }
-        public UserDto(Guid id, string name, string mobileNum, string email,string password,string jobtitle,Guid managerId)
-        {
-            ID = id;
-            Name = name;
-            MobileNumber = mobileNum;
-            Email = email;
-            Password = password;
-            JobTitle = jobtitle;
-            ManagerID = managerId;
-        }
     }
 }
 
