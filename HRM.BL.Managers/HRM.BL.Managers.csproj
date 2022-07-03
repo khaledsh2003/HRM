@@ -14,7 +14,6 @@
     <ProjectReference Include="..\HRM.BL.Interface\HRM.BL.Interface.csproj" />
     <ProjectReference Include="..\HRM.DAL.EF\HRM.DAL.EF.csproj" />
     <ProjectReference Include="..\HRM.Mapping\HRM.Mapping.csproj" />
-    <ProjectReference Include="..\HRM.PasswordHashing\Utilities.csproj" />
   </ItemGroup>
 
 </Project>

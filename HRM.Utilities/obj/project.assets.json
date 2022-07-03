@@ -298,11 +298,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\utilities.csproj",
-      "projectName": "utilities",
-      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\utilities.csproj",
+      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Utilities\\Utilities.csproj",
+      "projectName": "Utilities",
+      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Utilities\\Utilities.csproj",
       "packagesPath": "C:\\Users\\kshah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\obj\\",
+      "outputPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Utilities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kshah\\AppData\\Roaming\\NuGet\\NuGet.Config",
