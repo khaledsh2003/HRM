@@ -2,6 +2,7 @@
 using HRM.DAL.EF;
 using HRM.Mapping;
 using HRM.Models;
+using HRM.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,21 +22,21 @@ namespace HRM.BL.Managers
             _hrmContext= hrmContext;
             _vacationEntityMapper = new VacationEntityMapper();
         }
-        public VacationDto Create(VacationDto vacation)
+        public Response<VacationDto> Create(VacationDto vacation) 
         {
             try
             {
                 var vacationToCreate = new VacationEntity() {Type=vacation.Type, StartingDate=vacation.StartingDate,Duration=vacation.Duration,Status=vacation.Status,Note=vacation.Note,UserId=vacation.UserId,CreationDate=DateTime.Now};
                 _hrmContext.Vacations.Add(vacationToCreate);
                 _hrmContext.SaveChanges();
-                return _vacationEntityMapper.Map(vacationToCreate);
+                return new Response<VacationDto>(_vacationEntityMapper.Map(vacationToCreate));
             }
             catch (Exception ex)
             {
-                return null;
+                return new Response<VacationDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public List<VacationDto> GetVacationList()
+        public Response<List<VacationDto>> GetVacationList()
         {
             List<VacationDto> _vacation = new List<VacationDto>();
             try
@@ -45,36 +46,36 @@ namespace HRM.BL.Managers
                 {
                     _vacation.Add(_vacationEntityMapper.Map(i));
                 }
-                return _vacation;
+                return new Response<List<VacationDto>>(_vacation);
             }
             catch (Exception ex)
             {
-                return null;
+                return new Response<List<VacationDto>>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public VacationDto Update(VacationDto vacation)
+        public Response<VacationDto> Update(VacationDto vacation)
         {
             try
             {
                 if (IsVacationAval(vacation.ID))
                 {
-                    var vacationToUpdate = _hrmContext.Vacations.FirstOrDefault(x => x.ID == vacation.ID);
-                    if (vacation.Type>0 && vacation.Type<=3) vacationToUpdate.Type=vacation.Type;
-                    if (!string.IsNullOrEmpty(vacation.StartingDate.ToString())) vacationToUpdate.StartingDate = vacation.StartingDate;
-                    if (vacation.Duration>0) vacationToUpdate.Duration = vacation.Duration;
-                    if (vacation.Status >= 0 && vacation.Status<=3) vacationToUpdate.Status = vacation.Status;
-                    if (!string.IsNullOrEmpty(vacation.Note)) vacationToUpdate.Note = vacation.Note;
-                    _hrmContext.SaveChanges();
-                    return _vacationEntityMapper.Map(vacationToUpdate);
+                    return new Response<VacationDto>(ErrorCodes.UserNotFound, "User Not Found ");
                 }
-                return null;
+                var vacationToUpdate = _hrmContext.Vacations.FirstOrDefault(x => x.ID == vacation.ID);
+                if (vacation.Type > 0 && vacation.Type <= 3) vacationToUpdate.Type = vacation.Type;
+                if (!string.IsNullOrEmpty(vacation.StartingDate.ToString())) vacationToUpdate.StartingDate = vacation.StartingDate;
+                if (vacation.Duration > 0) vacationToUpdate.Duration = vacation.Duration;
+                if (vacation.Status >= 0 && vacation.Status <= 3) vacationToUpdate.Status = vacation.Status;
+                if (!string.IsNullOrEmpty(vacation.Note)) vacationToUpdate.Note = vacation.Note;
+                _hrmContext.SaveChanges();
+                return new Response<VacationDto>(_vacationEntityMapper.Map(vacationToUpdate));
             }
             catch (Exception ex)
             {
-                return null;
+                return new Response<VacationDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public bool Delete(Guid id)
+        public Response<bool> Delete(Guid id)
         {
             try
             {
@@ -83,13 +84,13 @@ namespace HRM.BL.Managers
                 {
                     _hrmContext.Remove(vacationToDelete);
                     _hrmContext.SaveChanges();
-                    return true;
+                    return new Response<bool>(true);
                 }
-                return false;
+                return new Response<bool>(false);
             }
             catch (Exception ex)
             {
-                return false;
+                return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
         public bool IsVacationAval(Guid id)

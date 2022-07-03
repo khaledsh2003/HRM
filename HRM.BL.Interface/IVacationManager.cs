@@ -1,4 +1,5 @@
 ﻿using HRM.Models;
+using HRM.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace HRM.BL.Interface
 {
     public interface IVacationManager
     {
-        public VacationDto Create(VacationDto vacation);
-        public List<VacationDto> GetVacationList();
-        public VacationDto Update(VacationDto vacation);
-        public bool Delete(Guid id);
+        public Response<VacationDto> Create(VacationDto vacation);
+        public Response<List<VacationDto>> GetVacationList();
+        public Response<VacationDto> Update(VacationDto vacation);
+        public Response<bool> Delete(Guid id);
     }
 }

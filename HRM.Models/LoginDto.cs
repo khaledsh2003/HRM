@@ -8,7 +8,7 @@ namespace HRM.Models
 {
     public class LoginDto
     {
-        public string UserName { get;}
-        public string Password { get;}
+        public Guid UserName { get; set;}
+        public string Password { get; set;}
     }
 }

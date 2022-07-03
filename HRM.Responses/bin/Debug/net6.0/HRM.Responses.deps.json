@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "HRM.Responses/1.0.0": {
+        "dependencies": {
+          "HRM.Models": "1.0.0"
+        },
+        "runtime": {
+          "HRM.Responses.dll": {}
+        }
+      },
+      "HRM.Models/1.0.0": {
+        "runtime": {
+          "HRM.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HRM.Responses/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HRM.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

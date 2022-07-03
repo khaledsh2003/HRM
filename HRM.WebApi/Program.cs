@@ -12,6 +12,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddTransient<IUserManager, UserSqlManager>();
 builder.Services.AddTransient<IVacationManager, VacationSqlManager>();
+builder.Services.AddTransient<ILoginSqlManager, LoginSqlManager>();
 builder.Services.AddDbContext<HrmContext>(options =>
             options.UseSqlServer(connectionString));
 

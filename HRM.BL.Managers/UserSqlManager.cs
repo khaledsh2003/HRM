@@ -8,50 +8,50 @@ using System.Security.Cryptography;
 
 namespace HRM.BL.Managers
 {
-    public class UserSqlManager:IUserManager
+    public class UserSqlManager : IUserManager 
     {
         private readonly IUserManager _userManager;
         private readonly HrmContext _hrmContext;
         private UserEntityMapper _userEntityMapper;
         private PasswordHash _hashPassword;
 
-        public UserSqlManager(IUserManager userManager,HrmContext hrmContext)
+        public UserSqlManager(IUserManager userManager, HrmContext hrmContext)
         {
-            _userManager = userManager; 
+            _userManager = userManager;
             _hrmContext = hrmContext;
             _userEntityMapper = new UserEntityMapper();
         }
-        public UserDto Create(UserDto user)
+        public Response<UserDto> Create(UserDto user)
         {
             try
             {
-                string hashedPassword=PasswordHash.HashText(user.Password,user.Name, new SHA1CryptoServiceProvider());
-                 var userToCreate = new UserEntity() {Name=user.Name, Type=user.Type,MobileNumber=user.MobileNumber,Email=user.Email,Password=hashedPassword, JobTitle=user.JobTitle,ManagerID=user.ManagerID,CreationDate=DateTime.Now};
+                string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
+                var userToCreate = new UserEntity() { Name = user.Name, Type = user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.ManagerID, CreationDate = DateTime.Now };
                 _hrmContext.Users.Add(userToCreate);
                 _hrmContext.SaveChanges();
-                return _userEntityMapper.Map(userToCreate);
+                return new Response<UserDto>(_userEntityMapper.Map(userToCreate));
             }
             catch (Exception ex)
             {
-                return null;
+                return new Response<UserDto>(ErrorCodes.Unexpected,"Unexpected Error");
             }
         }
-        public UserDto GetByID(Guid id)
+        public Response<UserDto> GetByID(Guid id)
         {
             try
             {
                 var user = _hrmContext.Users.FirstOrDefault(x => x.ID == id);
-                return _userEntityMapper.Map(user);
+                if(user==null) return new Response<UserDto>(ErrorCodes.UserNotFound, "No user found with such ID");
+                return new Response<UserDto>(_userEntityMapper.Map(user));
             }
             catch (Exception ex)
-            {
-                return null;
+            { 
+                return new Response<UserDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
         public Response<List<UserDto>> GetUsersList()
         {
             List<UserDto> _users = new List<UserDto>();
-            Response<List<UserDto>> response = new Response<List<UserDto>>();
             try
             {
                 var choosenUser = _hrmContext.Users.ToList();
@@ -59,43 +59,38 @@ namespace HRM.BL.Managers
                 {
                     _users.Add(_userEntityMapper.Map(i));
                 }
-                //setting respone data
-                response.Data = _users;
-                return response;
+                return new Response<List<UserDto>>(_users);
             }
             catch (Exception ex)
             {
-                //setting error code and description if there is an error
-                response.ErrorCode= ex.HResult;
-                response.Description = ex.Message;
-                return response;
+                return new Response<List<UserDto>>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public UserDto Update(UserDto user)
+        public Response<UserDto> Update(UserDto user)
         {
             try
             {
-                if (IsUserAval(user.ID))
+                if (!IsUserAval(user.ID))
                 {
-                    var userToUpdate = _hrmContext.Users.FirstOrDefault(x => x.ID==user.ID);
-                    string hashedPassword = PasswordHash.HashText(user.Password, userToUpdate.Name, new SHA1CryptoServiceProvider());
-                    if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
-                    if (!string.IsNullOrEmpty(user.MobileNumber)) userToUpdate.MobileNumber = user.MobileNumber;
-                    if (!string.IsNullOrEmpty(user.Email)) userToUpdate.Email = user.Email;
-                    if (!string.IsNullOrEmpty(user.Password)) userToUpdate.Password = hashedPassword;
-                    if (!string.IsNullOrEmpty(user.JobTitle)) userToUpdate.JobTitle = user.JobTitle;
-                    if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
-                    _hrmContext.SaveChanges();
-                    return _userEntityMapper.Map(userToUpdate);
+                    return new Response<UserDto>(ErrorCodes.UserNotFound, "User Not Found ");
                 }
-                return null;
+                var userToUpdate = _hrmContext.Users.FirstOrDefault(x => x.ID == user.ID);
+                string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
+                if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
+                if (!string.IsNullOrEmpty(user.MobileNumber)) userToUpdate.MobileNumber = user.MobileNumber;
+                if (!string.IsNullOrEmpty(user.Email)) userToUpdate.Email = user.Email;
+                if (!string.IsNullOrEmpty(user.Password)) userToUpdate.Password = hashedPassword;
+                if (!string.IsNullOrEmpty(user.JobTitle)) userToUpdate.JobTitle = user.JobTitle;
+                if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
+                _hrmContext.SaveChanges();
+                return new Response<UserDto>(_userEntityMapper.Map(userToUpdate));
             }
             catch (Exception ex)
             {
-                return null;
+                return new Response<UserDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public bool Delete(Guid id)
+        public Response<bool> Delete(Guid id)
         {
             try
             {
@@ -104,20 +99,34 @@ namespace HRM.BL.Managers
                 {
                     _hrmContext.Remove(userToDelete);
                     _hrmContext.SaveChanges();
-                    return true;
+                    return new Response<bool>(true);
                 }
-                return false;
+                return new Response<bool>(false);
             }
             catch (Exception ex)
             {
-                return false;
+                return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
         public bool IsUserAval(Guid id)
         {
             var user = _hrmContext.Users.FirstOrDefault(x => x.ID == id);
-            if(user == null) return false;
+            if (user == null) return false;
             return true;
         }
+        public Response<bool> IsUserFound(LoginDto loginDto)
+        {
+            try
+            {
+                string hashedPassword = PasswordHash.HashText(loginDto.Password, "khaled", new SHA1CryptoServiceProvider());
+                var user = GetByID(loginDto.UserName);
+                if (user.ErrorCode==0 && user.Data.Password == hashedPassword) return new Response<bool>(true);
+                return new Response<bool>(ErrorCodes.UserNotFound,"User is not found in our record");
+            }
+            catch(Exception ex)
+            {
+                return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
+            }            
+        }     
     }
 }

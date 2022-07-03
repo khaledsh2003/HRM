@@ -18,7 +18,7 @@ namespace HRM.DAL.EF
         public DateTime StartingDate { get; set; }
         public int Duration { get; set; }
         public int Status { get; set; }
-        public string Note { get; set; }
+        public string? Note { get; set; }
 
         [ForeignKey("User")]
         public Guid UserId { get; set; }

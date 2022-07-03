@@ -1,0 +1,5 @@
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\HRM.BL.Managers.csproj.AssemblyReference.cache
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\HRM.BL.Managers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\HRM.BL.Managers.AssemblyInfoInputs.cache
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\HRM.BL.Managers.AssemblyInfo.cs
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\HRM.BL.Managers.csproj.CoreCompileInputs.cache

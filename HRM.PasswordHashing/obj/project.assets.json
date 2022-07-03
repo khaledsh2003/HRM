@@ -298,9 +298,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\HRM.PasswordHashing.csproj",
-      "projectName": "HRM.PasswordHashing",
-      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\HRM.PasswordHashing.csproj",
+      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\utilities.csproj",
+      "projectName": "utilities",
+      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\utilities.csproj",
       "packagesPath": "C:\\Users\\kshah\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.PasswordHashing\\obj\\",
       "projectStyle": "PackageReference",
