@@ -20,7 +20,7 @@ namespace HRM.DAL.EF
         public string MobileNumber { get; set; }
         [MaxLength(100)]
         public string Email { get;set;}
-        [MaxLength(100)]//for encry larger
+        [MaxLength(100)]
         public string Password { get; set; }
         [MaxLength(70)]
         public string JobTitle { get; set; }

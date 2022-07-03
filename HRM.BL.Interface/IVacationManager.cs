@@ -12,6 +12,6 @@ namespace HRM.BL.Interface
         public VacationDto Create(VacationDto vacation);
         public List<VacationDto> GetVacationList();
         public VacationDto Update(VacationDto vacation);
-        public bool Delete(int id);
+        public bool Delete(Guid id);
     }
 }

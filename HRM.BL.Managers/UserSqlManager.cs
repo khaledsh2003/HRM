@@ -2,7 +2,9 @@
 using HRM.DAL.EF;
 using HRM.Mapping;
 using HRM.Models;
+using HRM.PasswordHashing;
 using HRM.Responses;
+using System.Security.Cryptography;
 
 namespace HRM.BL.Managers
 {
@@ -11,6 +13,7 @@ namespace HRM.BL.Managers
         private readonly IUserManager _userManager;
         private readonly HrmContext _hrmContext;
         private UserEntityMapper _userEntityMapper;
+        private PasswordHash _hashPassword;
 
         public UserSqlManager(IUserManager userManager,HrmContext hrmContext)
         {
@@ -22,7 +25,8 @@ namespace HRM.BL.Managers
         {
             try
             {
-                var userToCreate = new UserEntity() {Name=user.Name, Type=user.Type,MobileNumber=user.MobileNumber,Email=user.Email,Password=user.Password,JobTitle=user.JobTitle,ManagerID=user.ManagerID,CreationDate=DateTime.Now};
+                string hashedPassword=PasswordHash.HashText(user.Password,user.Name, new SHA1CryptoServiceProvider());
+                 var userToCreate = new UserEntity() {Name=user.Name, Type=user.Type,MobileNumber=user.MobileNumber,Email=user.Email,Password=hashedPassword, JobTitle=user.JobTitle,ManagerID=user.ManagerID,CreationDate=DateTime.Now};
                 _hrmContext.Users.Add(userToCreate);
                 _hrmContext.SaveChanges();
                 return _userEntityMapper.Map(userToCreate);
@@ -74,10 +78,11 @@ namespace HRM.BL.Managers
                 if (IsUserAval(user.ID))
                 {
                     var userToUpdate = _hrmContext.Users.FirstOrDefault(x => x.ID==user.ID);
+                    string hashedPassword = PasswordHash.HashText(user.Password, userToUpdate.Name, new SHA1CryptoServiceProvider());
                     if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
                     if (!string.IsNullOrEmpty(user.MobileNumber)) userToUpdate.MobileNumber = user.MobileNumber;
                     if (!string.IsNullOrEmpty(user.Email)) userToUpdate.Email = user.Email;
-                    if (!string.IsNullOrEmpty(user.Password)) userToUpdate.Password = user.Password;
+                    if (!string.IsNullOrEmpty(user.Password)) userToUpdate.Password = hashedPassword;
                     if (!string.IsNullOrEmpty(user.JobTitle)) userToUpdate.JobTitle = user.JobTitle;
                     if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
                     _hrmContext.SaveChanges();
@@ -114,6 +119,5 @@ namespace HRM.BL.Managers
             if(user == null) return false;
             return true;
         }
-        //do encryption function
     }
 }

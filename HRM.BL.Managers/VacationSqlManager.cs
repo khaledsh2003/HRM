@@ -58,15 +58,14 @@ namespace HRM.BL.Managers
             {
                 if (IsVacationAval(vacation.ID))
                 {
-                    var userToUpdate = _hrmContext.Users.FirstOrDefault(x => x.ID == user.ID);
-                    if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
-                    if (!string.IsNullOrEmpty(user.MobileNumber)) userToUpdate.MobileNumber = user.MobileNumber;
-                    if (!string.IsNullOrEmpty(user.Email)) userToUpdate.Email = user.Email;
-                    if (!string.IsNullOrEmpty(user.Password)) userToUpdate.Password = user.Password;
-                    if (!string.IsNullOrEmpty(user.JobTitle)) userToUpdate.JobTitle = user.JobTitle;
-                    if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
+                    var vacationToUpdate = _hrmContext.Vacations.FirstOrDefault(x => x.ID == vacation.ID);
+                    if (vacation.Type>0 && vacation.Type<=3) vacationToUpdate.Type=vacation.Type;
+                    if (!string.IsNullOrEmpty(vacation.StartingDate.ToString())) vacationToUpdate.StartingDate = vacation.StartingDate;
+                    if (vacation.Duration>0) vacationToUpdate.Duration = vacation.Duration;
+                    if (vacation.Status >= 0 && vacation.Status<=3) vacationToUpdate.Status = vacation.Status;
+                    if (!string.IsNullOrEmpty(vacation.Note)) vacationToUpdate.Note = vacation.Note;
                     _hrmContext.SaveChanges();
-                    return _userEntityMapper.Map(userToUpdate);
+                    return _vacationEntityMapper.Map(vacationToUpdate);
                 }
                 return null;
             }
@@ -75,9 +74,23 @@ namespace HRM.BL.Managers
                 return null;
             }
         }
-        public bool Delete(int id)
+        public bool Delete(Guid id)
         {
-
+            try
+            {
+                var vacationToDelete = _hrmContext.Vacations.FirstOrDefault(x => x.ID == id);
+                if (vacationToDelete != null)
+                {
+                    _hrmContext.Remove(vacationToDelete);
+                    _hrmContext.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
         public bool IsVacationAval(Guid id)
         {
