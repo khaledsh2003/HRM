@@ -2,6 +2,7 @@ using HRM.BL.Interface;
 using HRM.BL.Managers;
 using HRM.DAL.EF;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +13,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddTransient<IUserManager, UserSqlManager>();
 builder.Services.AddTransient<IVacationManager, VacationSqlManager>();
-builder.Services.AddTransient<ILoginSqlManager, LoginSqlManager>();
 builder.Services.AddDbContext<HrmContext>(options =>
             options.UseSqlServer(connectionString));
+
+//Integrate logger
+var logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration).Enrich.FromLogContext().CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

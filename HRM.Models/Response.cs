@@ -1,6 +1,5 @@
-﻿using HRM.Models;
-
-namespace HRM.Responses
+﻿
+namespace HRM.Models
 {
     //in models
     public class Response<T>

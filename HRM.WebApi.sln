@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRM.BL.Interface", "HRM.BL.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRM.Mapping", "HRM.Mapping\HRM.Mapping.csproj", "{02C3F2B6-391D-435F-A717-230AA31E1AF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "HRM.PasswordHashing\Utilities.csproj", "{A7B316CB-612F-4B1E-A919-9E09F4CB756D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "HRM.Utilities\Utilities.csproj", "{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{02C3F2B6-391D-435F-A717-230AA31E1AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C3F2B6-391D-435F-A717-230AA31E1AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C3F2B6-391D-435F-A717-230AA31E1AF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A7B316CB-612F-4B1E-A919-9E09F4CB756D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7B316CB-612F-4B1E-A919-9E09F4CB756D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7B316CB-612F-4B1E-A919-9E09F4CB756D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7B316CB-612F-4B1E-A919-9E09F4CB756D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

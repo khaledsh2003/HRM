@@ -14,7 +14,7 @@ namespace HRM.BL.Managers
         private readonly HrmContext _hrmContext;
         private UserEntityMapper _userEntityMapper;
         private PasswordHash _hashPassword;
-
+        public string _password { get; set; }
         public UserSqlManager(IUserManager userManager, HrmContext hrmContext)
         {
             _userManager = userManager;
@@ -25,7 +25,7 @@ namespace HRM.BL.Managers
         {
             try
             {
-                string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
+                string hashedPassword = PasswordHash.HashText(_password,"khaled", new SHA1CryptoServiceProvider());
                 var userToCreate = new UserEntity() { Name = user.Name, Type = user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.ManagerID, CreationDate = DateTime.Now };
                 _hrmContext.Users.Add(userToCreate);
                 _hrmContext.SaveChanges();
@@ -75,11 +75,9 @@ namespace HRM.BL.Managers
                     return new Response<UserDto>(ErrorCodes.UserNotFound, "User Not Found ");
                 }
                 var userToUpdate = _hrmContext.Users.FirstOrDefault(x => x.ID == user.ID);
-                string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
                 if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
                 if (!string.IsNullOrEmpty(user.MobileNumber)) userToUpdate.MobileNumber = user.MobileNumber;
                 if (!string.IsNullOrEmpty(user.Email)) userToUpdate.Email = user.Email;
-                if (!string.IsNullOrEmpty(user.Password)) userToUpdate.Password = hashedPassword;
                 if (!string.IsNullOrEmpty(user.JobTitle)) userToUpdate.JobTitle = user.JobTitle;
                 if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
                 _hrmContext.SaveChanges();
@@ -108,25 +106,43 @@ namespace HRM.BL.Managers
                 return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public bool IsUserAval(Guid id)
+        private bool IsUserAval(Guid id)
         {
             var user = _hrmContext.Users.FirstOrDefault(x => x.ID == id);
             if (user == null) return false;
             return true;
         }
-        public Response<bool> IsUserFound(LoginDto loginDto)
+        public Response<bool> ResetPassword(LoginDto loginDto)
+        {
+            try
+            {
+                if (IsUserAval(loginDto.UserName))
+                {
+                    string hashedPassword = PasswordHash.HashText(loginDto.Password, "khaled", new SHA1CryptoServiceProvider());
+                    var user = _hrmContext.Users.FirstOrDefault(x => x.ID == loginDto.UserName);
+                    user.Password=hashedPassword;
+                    return new Response<bool>(true);
+                }
+                return new Response<bool>(ErrorCodes.UserNotFound, "User is not found in our record");
+            }
+            catch (Exception ex)
+            {
+                return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
+            }
+        }
+        public Response<bool> Login(LoginDto loginDto)
         {
             try
             {
                 string hashedPassword = PasswordHash.HashText(loginDto.Password, "khaled", new SHA1CryptoServiceProvider());
-                var user = GetByID(loginDto.UserName);
-                if (user.ErrorCode==0 && user.Data.Password == hashedPassword) return new Response<bool>(true);
+                var user = _hrmContext.Users.FirstOrDefault(x => x.ID == loginDto.UserName);
+                if (user!=null && user.Password==hashedPassword) return new Response<bool>(true);
                 return new Response<bool>(ErrorCodes.UserNotFound,"User is not found in our record");
             }
             catch(Exception ex)
             {
                 return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
-            }            
+            }
         }     
     }
 }
