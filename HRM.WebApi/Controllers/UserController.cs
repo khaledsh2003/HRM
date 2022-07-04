@@ -86,7 +86,7 @@ namespace Controllers
         {
             try
             {
-                Response<bool> islogin = _userManager.Login(loginDto);
+                var islogin = _userManager.Login(loginDto);
                 if (islogin.ErrorCode == 0) return Ok(islogin);
                 else return BadRequest(islogin);
             }

@@ -18,15 +18,37 @@ namespace HRM.BL.Managers
             _hrmContext = hrmContext;
             _userEntityMapper = new UserEntityMapper();
         }
+        private Response<UserEntity> FindManagerByID(Guid? managerID)
+        {
+            try
+            {
+                if (!IsUserAval(managerID))
+                {
+                    return new Response<UserEntity>(ErrorCodes.UserNotFound,"Manager Not Found");
+                }
+                var manager = _hrmContext.Users.FirstOrDefault(x=>x.ID==managerID);
+                return new Response<UserEntity>(manager);
+            }
+            catch(Exception ex)
+            {
+                return new Response<UserEntity>(ErrorCodes.Unexpected,"UnExpected Error");
+            }
+        }
         public async Task<Response<UserDto>> Create(CreateUserDto user)
         {
             try
             {
+                Response<UserEntity> manager;
                 string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
                 var userToCreate = new UserEntity() { Name = user.Name, Type = user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.Manager.ID, CreationDate = DateTime.Now };
                 _hrmContext.Users.Add(userToCreate);
                 await _hrmContext.SaveChangesAsync();
-                return new Response<UserDto>(_userEntityMapper.Map(userToCreate));
+                if (FindManagerByID(user.Manager.ID).ErrorCode==0)
+                {
+                    manager = FindManagerByID(user.Manager.ID);
+                    return new Response<UserDto>(_userEntityMapper.Map(userToCreate,manager.Data));
+                }
+                return new Response<UserDto>(ErrorCodes.UserNotFound,"Manager Was not found"); 
             }
             catch (Exception ex)
             {
@@ -39,7 +61,7 @@ namespace HRM.BL.Managers
             {
                 var user = _hrmContext.Users.FirstOrDefault(x => x.ID == id);
                 if(user==null) return new Response<UserDto>(ErrorCodes.UserNotFound, "No user found with such ID");
-                return new Response<UserDto>(_userEntityMapper.Map(user));
+                return new Response<UserDto>(_userEntityMapper.Map(user, FindManagerByID(user.ID).Data));
             }
             catch (Exception ex)
             { 
@@ -56,7 +78,7 @@ namespace HRM.BL.Managers
                 var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).Where(x=>x.ManagerID==managerID).ToList();
                 foreach (var i in choosenUser)
                 {
-                    _users.Add(_userEntityMapper.Map(i));
+                    _users.Add(_userEntityMapper.Map(i, FindManagerByID(managerID).Data));
                 }
                 return new Response<List<UserDto>>(_users);
             }
@@ -80,7 +102,7 @@ namespace HRM.BL.Managers
                 if (!string.IsNullOrEmpty(user.JobTitle)) userToUpdate.JobTitle = user.JobTitle;
                 if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
                 await _hrmContext.SaveChangesAsync();
-                return new Response<UserDto>(_userEntityMapper.Map(userToUpdate));
+                return new Response<UserDto>(_userEntityMapper.Map(userToUpdate,FindManagerByID(userToUpdate.ManagerID).Data));
             }
             catch (Exception ex)
             {
@@ -105,7 +127,7 @@ namespace HRM.BL.Managers
                 return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        private bool IsUserAval(Guid id)
+        private bool IsUserAval(Guid? id)
         {
             var user = _hrmContext.Users.FirstOrDefault(x => x.ID == id);
             if (user == null) return false;

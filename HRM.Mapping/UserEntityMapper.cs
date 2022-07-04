@@ -5,7 +5,7 @@ namespace HRM.Mapping
 {
     public class UserEntityMapper
     {
-        public UserDto Map(UserEntity user)
+        public UserDto Map(UserEntity user,UserEntity manager)
         {
             var temp = new UserDto
             {
@@ -20,12 +20,12 @@ namespace HRM.Mapping
             if (user.ManagerID != null || user.ManagerID != Guid.Empty)
             {
                 temp.Manager = new ManagerDto();
-                temp.Manager.ID = user.ID;
-                temp.Manager.Name = user.Name;
-                temp.Manager.Type = user.Type;
-                temp.Manager.MobileNumber = user.MobileNumber;
-                temp.Manager.Email = user.Email;
-                temp.Manager.JobTitle = user.JobTitle;    
+                temp.Manager.ID = manager.ID;
+                temp.Manager.Name = manager.Name;
+                temp.Manager.Type = manager.Type;
+                temp.Manager.MobileNumber = manager.MobileNumber;
+                temp.Manager.Email = manager.Email;
+                temp.Manager.JobTitle = manager.JobTitle;    
             }
             return temp;
         }
