@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks; 
 
 namespace HRM.Models
 {
@@ -10,6 +10,8 @@ namespace HRM.Models
     {
         Success = 0,
         UserNotFound = 1110,
+        WrongPassOrUser=10,
         Unexpected = 44444,
+
     }
 }

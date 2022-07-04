@@ -21,11 +21,11 @@ namespace Controllers
             _logger = logger;
         }
         [HttpPost]
-        public async Task<IActionResult> Create(UserDto user)
+        public async Task<IActionResult> Create(CreateUserDto createUserDto)
         {
             try
             {
-                Response<UserDto> newUser = await _userManager.Create(user);
+                Response<UserDto> newUser = await _userManager.Create(createUserDto);
                 if(newUser.ErrorCode==0) return Ok(newUser);
                 else return BadRequest(newUser);
             }
@@ -52,7 +52,7 @@ namespace Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll(Guid managerID, Paging page)
+        public IActionResult GetAll(Guid managerID,[FromQuery] Paging page)
         {
             try
             {
@@ -97,11 +97,11 @@ namespace Controllers
             }
         }
         [HttpPut]
-        public IActionResult ResetPassword(LoginDto loginDto)
+        public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
         {
             try
             {
-                Response<bool> resetPass = _userManager.ResetPassword(loginDto);
+                Response<bool> resetPass = await _userManager.ResetPassword(resetPasswordDto);
                 if (resetPass.ErrorCode == 0) return Ok(resetPass);
                 else return BadRequest(resetPass);
             }

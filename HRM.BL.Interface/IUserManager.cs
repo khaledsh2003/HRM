@@ -5,13 +5,13 @@ namespace HRM.BL.Interface
 {
     public interface IUserManager
     {
-        public Task<Response<UserDto>> Create(UserDto user);
+        public Task<Response<UserDto>> Create(CreateUserDto user);
         public Response<UserDto> GetByID(Guid id);
         public Response<List<UserDto>> GetUsersList(Guid managerId,[FromQuery] Paging @param);
         public Task<Response<UserDto>> Update(UserDto user);
         public Task<Response<bool>> Delete(Guid id);
         public Response<bool> Login(LoginDto loginDto);
-        public Response<bool> ResetPassword(LoginDto loginDto);
+        public Task<Response<bool>> ResetPassword(ResetPasswordDto resetPasswordDto);
 
     }
 }

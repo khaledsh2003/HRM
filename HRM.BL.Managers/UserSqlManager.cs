@@ -13,17 +13,16 @@ namespace HRM.BL.Managers
         private readonly HrmContext _hrmContext;
         private UserEntityMapper _userEntityMapper;
         private PasswordHash _hashPassword;
-        public string _password { get; set; }
         public UserSqlManager(HrmContext hrmContext)
         {
             _hrmContext = hrmContext;
             _userEntityMapper = new UserEntityMapper();
         }
-        public async Task<Response<UserDto>> Create(UserDto user)
+        public async Task<Response<UserDto>> Create(CreateUserDto user)
         {
             try
             {
-                string hashedPassword = PasswordHash.HashText(_password,"khaled", new SHA1CryptoServiceProvider());
+                string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
                 var userToCreate = new UserEntity() { Name = user.Name, Type = user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.Manager.ID, CreationDate = DateTime.Now };
                 _hrmContext.Users.Add(userToCreate);
                 await _hrmContext.SaveChangesAsync();
@@ -112,16 +111,22 @@ namespace HRM.BL.Managers
             if (user == null) return false;
             return true;
         }
-        public Response<bool> ResetPassword(LoginDto loginDto)
+        public async Task<Response<bool>> ResetPassword(ResetPasswordDto resetPasswordDto)
         {
             try
             {
-                if (IsUserAval(loginDto.UserName))
+                if (IsUserAval(resetPasswordDto.UserName))
                 {
-                    string hashedPassword = PasswordHash.HashText(loginDto.Password, "khaled", new SHA1CryptoServiceProvider());
-                    var user = _hrmContext.Users.FirstOrDefault(x => x.ID == loginDto.UserName);
-                    user.Password=hashedPassword;
-                    return new Response<bool>(true);
+                    string hashedNewPassword = PasswordHash.HashText(resetPasswordDto.NewPassword, "khaled", new SHA1CryptoServiceProvider());
+                    string hashedOldPassword = PasswordHash.HashText(resetPasswordDto.OldPassword, "khaled", new SHA1CryptoServiceProvider());
+                    var user = _hrmContext.Users.FirstOrDefault(x => x.ID == resetPasswordDto.UserName);
+                    if (user.Password == hashedOldPassword)
+                    {
+                        user.Password = hashedNewPassword;
+                        await _hrmContext.SaveChangesAsync();
+                        return new Response<bool>(true);
+                    }
+                    return new Response<bool>(ErrorCodes.WrongPassOrUser, "Wrong Password Or Username");
                 }
                 return new Response<bool>(ErrorCodes.UserNotFound, "User is not found in our record");
             }

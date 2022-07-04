@@ -11,6 +11,10 @@
         public ManagerDto Manager { get; set; }
 
     }
+    public class CreateUserDto:UserDto
+    {
+        public string Password { get; set; }
+    }
 }
 
 

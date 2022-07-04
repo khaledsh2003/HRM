@@ -190,3 +190,671 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
 [2022-07-04 16:53:28.982 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 117733.6018ms
 [2022-07-04 16:53:28.983 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
 [2022-07-04 16:53:28.990 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 347 - 200 - application/json;+charset=utf-8 117863.1995ms
+[2022-07-04 17:03:51.833 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Remove?id=c6f1a123-32dc-4e9a-4336-08da5dbc589e - -
+[2022-07-04 17:03:51.837 +03:00  INF]  Executing endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:03:51.845 +03:00  INF]  Route matched with {action = "Remove", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Remove(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:03:52.041 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:03:52.549 +03:00  INF]  Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:03:52.614 +03:00  INF]  Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Users]
+WHERE [ID] = @p0;
+SELECT @@ROWCOUNT;
+[2022-07-04 17:03:52.627 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 17:03:52.629 +03:00  INF]  Executed action Controllers.UserController.Remove (HRM.WebApi) in 783.0546ms
+[2022-07-04 17:03:52.629 +03:00  INF]  Executed endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:03:52.629 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Remove?id=c6f1a123-32dc-4e9a-4336-08da5dbc589e - - - 200 - application/json;+charset=utf-8 796.0272ms
+[2022-07-04 17:04:31.224 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Remove?id=baa627a5-e0fd-4271-4338-08da5dbc589e - -
+[2022-07-04 17:04:31.224 +03:00  INF]  Executing endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:04:31.224 +03:00  INF]  Route matched with {action = "Remove", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Remove(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:04:31.241 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:04:31.247 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:04:31.253 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Users]
+WHERE [ID] = @p0;
+SELECT @@ROWCOUNT;
+[2022-07-04 17:04:31.254 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 17:04:31.254 +03:00  INF]  Executed action Controllers.UserController.Remove (HRM.WebApi) in 29.8305ms
+[2022-07-04 17:04:31.254 +03:00  INF]  Executed endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:04:31.255 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Remove?id=baa627a5-e0fd-4271-4338-08da5dbc589e - - - 200 - application/json;+charset=utf-8 30.9901ms
+[2022-07-04 17:04:34.276 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Remove?id=baa627a5-e0fd-4271-4338-08da5dbc589e - -
+[2022-07-04 17:04:34.278 +03:00  INF]  Executing endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:04:34.278 +03:00  INF]  Route matched with {action = "Remove", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Remove(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:04:34.292 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:04:34.311 +03:00  INF]  Executed DbCommand (18ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:04:34.311 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 17:04:34.312 +03:00  INF]  Executed action Controllers.UserController.Remove (HRM.WebApi) in 33.676ms
+[2022-07-04 17:04:34.312 +03:00  INF]  Executed endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:04:34.312 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Remove?id=baa627a5-e0fd-4271-4338-08da5dbc589e - - - 200 - application/json;+charset=utf-8 35.9444ms
+[2022-07-04 17:04:51.834 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Remove?id=7f377cdc-8bbf-45b9-e946-08da5dc44e32 - -
+[2022-07-04 17:04:51.834 +03:00  INF]  Executing endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:04:51.834 +03:00  INF]  Route matched with {action = "Remove", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Remove(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:04:51.836 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:04:51.840 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:04:51.864 +03:00  INF]  Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Users]
+WHERE [ID] = @p0;
+SELECT @@ROWCOUNT;
+[2022-07-04 17:04:51.891 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 17:04:51.891 +03:00  INF]  Executed action Controllers.UserController.Remove (HRM.WebApi) in 57.2055ms
+[2022-07-04 17:04:51.891 +03:00  INF]  Executed endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:04:51.892 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Remove?id=7f377cdc-8bbf-45b9-e946-08da5dc44e32 - - - 200 - application/json;+charset=utf-8 58.1111ms
+[2022-07-04 17:05:02.067 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Remove?id=15be6cd5-d11c-4cf4-4337-08da5dbc589e - -
+[2022-07-04 17:05:02.067 +03:00  INF]  Executing endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:05:02.068 +03:00  INF]  Route matched with {action = "Remove", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Remove(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:05:02.070 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:05:02.076 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:05:02.092 +03:00  INF]  Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Users]
+WHERE [ID] = @p0;
+SELECT @@ROWCOUNT;
+[2022-07-04 17:05:02.106 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 17:05:02.107 +03:00  INF]  Executed action Controllers.UserController.Remove (HRM.WebApi) in 38.6907ms
+[2022-07-04 17:05:02.107 +03:00  INF]  Executed endpoint 'Controllers.UserController.Remove (HRM.WebApi)'
+[2022-07-04 17:05:02.107 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Remove?id=15be6cd5-d11c-4cf4-4337-08da5dbc589e - - - 200 - application/json;+charset=utf-8 40.2610ms
+[2022-07-04 17:07:07.285 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 293
+[2022-07-04 17:07:07.286 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:07:07.286 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:07:07.355 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 17:07:07.362 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 76.2214ms
+[2022-07-04 17:07:07.362 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:07:07.362 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 293 - 400 - application/problem+json;+charset=utf-8 76.9582ms
+[2022-07-04 17:07:55.824 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 317
+[2022-07-04 17:07:55.824 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:07:55.824 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:07:55.827 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 17:07:55.827 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 2.5295ms
+[2022-07-04 17:07:55.827 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:07:55.827 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 317 - 400 - application/problem+json;+charset=utf-8 3.1102ms
+[2022-07-04 17:08:05.542 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 319
+[2022-07-04 17:08:05.542 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:08:05.542 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:08:05.544 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 17:08:05.545 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 2.7612ms
+[2022-07-04 17:08:05.545 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:08:05.545 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 319 - 400 - application/problem+json;+charset=utf-8 3.2615ms
+[2022-07-04 17:08:40.106 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 319
+[2022-07-04 17:08:40.106 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:08:40.107 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:08:40.118 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 17:08:40.118 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 11.3175ms
+[2022-07-04 17:08:40.118 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:08:40.118 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 319 - 400 - application/problem+json;+charset=utf-8 12.0518ms
+[2022-07-04 17:09:10.929 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 319
+[2022-07-04 17:09:10.929 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:09:10.929 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:09:10.930 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 17:09:10.931 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 1.6894ms
+[2022-07-04 17:09:10.931 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:09:10.931 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 319 - 400 - application/problem+json;+charset=utf-8 2.3029ms
+[2022-07-04 17:14:48.536 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 332
+[2022-07-04 17:14:48.536 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:14:48.536 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:14:48.544 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 17:14:48.544 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 8.4123ms
+[2022-07-04 17:14:48.545 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:14:48.545 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 332 - 400 - application/problem+json;+charset=utf-8 9.0992ms
+[2022-07-04 17:15:26.510 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 362
+[2022-07-04 17:15:26.510 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:15:26.510 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:15:26.511 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:15:26.711 +03:00  INF]  Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 17:24:44.023 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 17:24:44.912 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 17:24:44.915 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 17:24:44.920 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 17:24:44.920 +03:00  INF]  Hosting environment: Development
+[2022-07-04 17:24:44.920 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 17:24:47.220 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 17:24:48.873 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 1658.5181ms
+[2022-07-04 17:24:49.520 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 17:24:49.529 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 7.8348ms
+[2022-07-04 17:24:49.575 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 17:24:49.596 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 20.9134ms
+[2022-07-04 17:24:51.043 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 17:24:51.263 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.8288ms
+[2022-07-04 17:28:30.994 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 334
+[2022-07-04 17:28:31.015 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:28:31.143 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:28:31.758 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 17:28:31.773 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 621.8654ms
+[2022-07-04 17:28:31.774 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:28:31.778 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 334 - 400 - application/problem+json;+charset=utf-8 783.0800ms
+[2022-07-04 17:29:49.054 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 368
+[2022-07-04 17:29:49.060 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:29:49.061 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:29:50.697 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:29:52.007 +03:00  INF]  Executed DbCommand (85ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 17:32:23.402 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 17:32:46.180 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 177118.9534ms
+[2022-07-04 17:32:46.181 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:32:46.184 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 368 - 200 - application/json;+charset=utf-8 177129.9526ms
+[2022-07-04 17:36:25.846 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 355
+[2022-07-04 17:36:25.848 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:36:25.848 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:36:25.973 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:36:26.012 +03:00  INF]  Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 17:36:32.923 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 17:36:32.924 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 7075.1364ms
+[2022-07-04 17:36:32.924 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 17:36:32.924 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 355 - 200 - application/json;+charset=utf-8 7078.3861ms
+[2022-07-04 17:38:36.959 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Get?id=a1c70103-1446-4157-837f-08da5dc9a791 - -
+[2022-07-04 17:38:36.961 +03:00  INF]  Executing endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:38:36.976 +03:00  INF]  Route matched with {action = "Get", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:38:37.025 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:38:37.440 +03:00  INF]  Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:38:37.457 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 17:38:37.457 +03:00  INF]  Executed action Controllers.UserController.Get (HRM.WebApi) in 481.3552ms
+[2022-07-04 17:38:37.457 +03:00  INF]  Executed endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:38:37.457 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Get?id=a1c70103-1446-4157-837f-08da5dc9a791 - - - 200 - application/json;+charset=utf-8 498.1111ms
+[2022-07-04 17:39:06.180 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Get?id=a1c70103-1446-4157-837f-08da5dc9a791 - -
+[2022-07-04 17:39:06.180 +03:00  INF]  Executing endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:39:06.180 +03:00  INF]  Route matched with {action = "Get", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:39:06.182 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:39:06.207 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:39:06.208 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 17:39:06.208 +03:00  INF]  Executed action Controllers.UserController.Get (HRM.WebApi) in 27.6056ms
+[2022-07-04 17:39:06.208 +03:00  INF]  Executed endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:39:06.208 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Get?id=a1c70103-1446-4157-837f-08da5dc9a791 - - - 200 - application/json;+charset=utf-8 28.1095ms
+[2022-07-04 17:39:12.329 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Get?id=a1c70103-1646-4157-837f-08da5dc9a791 - -
+[2022-07-04 17:39:12.330 +03:00  INF]  Executing endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:39:12.330 +03:00  INF]  Route matched with {action = "Get", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:39:12.331 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:39:12.347 +03:00  INF]  Executed DbCommand (15ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:39:12.348 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 17:39:12.349 +03:00  INF]  Executed action Controllers.UserController.Get (HRM.WebApi) in 18.8995ms
+[2022-07-04 17:39:12.349 +03:00  INF]  Executed endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:39:12.349 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Get?id=a1c70103-1646-4157-837f-08da5dc9a791 - - - 400 - application/json;+charset=utf-8 19.5945ms
+[2022-07-04 17:39:34.890 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/Get?id=c1686a97-1b1a-4c5b-8380-08da5dc9a791 - -
+[2022-07-04 17:39:34.890 +03:00  INF]  Executing endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:39:34.890 +03:00  INF]  Route matched with {action = "Get", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Guid) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 17:39:34.891 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 17:39:34.892 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 17:39:34.893 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 17:39:34.893 +03:00  INF]  Executed action Controllers.UserController.Get (HRM.WebApi) in 2.8782ms
+[2022-07-04 17:39:34.893 +03:00  INF]  Executed endpoint 'Controllers.UserController.Get (HRM.WebApi)'
+[2022-07-04 17:39:34.893 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/Get?id=c1686a97-1b1a-4c5b-8380-08da5dc9a791 - - - 200 - application/json;+charset=utf-8 3.5568ms
+[2022-07-04 17:44:55.548 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 17:44:55.602 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 53.5725ms
+[2022-07-04 17:44:55.647 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 17:44:55.647 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 0.3827ms
+[2022-07-04 17:44:55.650 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 17:44:55.886 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 235.4755ms
+[2022-07-04 17:44:56.000 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 17:44:56.014 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 13.5263ms
+[2022-07-04 17:44:56.134 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/favicon-32x32.png - -
+[2022-07-04 17:44:56.152 +03:00  INF]  Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+[2022-07-04 17:44:56.152 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/favicon-32x32.png - - - 200 628 image/png 17.8052ms
+[2022-07-04 18:03:21.996 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/Update application/json 276
+[2022-07-04 18:03:22.004 +03:00  INF]  Executing endpoint 'Controllers.UserController.Update (HRM.WebApi)'
+[2022-07-04 18:03:22.011 +03:00  INF]  Route matched with {action = "Update", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:03:22.025 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 18:03:22.025 +03:00  INF]  Executed action Controllers.UserController.Update (HRM.WebApi) in 14.237ms
+[2022-07-04 18:03:22.025 +03:00  INF]  Executed endpoint 'Controllers.UserController.Update (HRM.WebApi)'
+[2022-07-04 18:03:22.025 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/Update application/json 276 - 400 - application/problem+json;+charset=utf-8 30.4878ms
+[2022-07-04 18:04:17.808 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/Update application/json 312
+[2022-07-04 18:04:17.808 +03:00  INF]  Executing endpoint 'Controllers.UserController.Update (HRM.WebApi)'
+[2022-07-04 18:04:17.809 +03:00  INF]  Route matched with {action = "Update", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:04:17.811 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 18:04:17.811 +03:00  INF]  Executed action Controllers.UserController.Update (HRM.WebApi) in 2.6226ms
+[2022-07-04 18:04:17.811 +03:00  INF]  Executed endpoint 'Controllers.UserController.Update (HRM.WebApi)'
+[2022-07-04 18:04:17.812 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/Update application/json 312 - 400 - application/problem+json;+charset=utf-8 3.9077ms
+[2022-07-04 18:04:47.431 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/Update application/json 312
+[2022-07-04 18:04:47.434 +03:00  INF]  Executing endpoint 'Controllers.UserController.Update (HRM.WebApi)'
+[2022-07-04 18:04:47.434 +03:00  INF]  Route matched with {action = "Update", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:04:48.080 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:04:48.191 +03:00  INF]  Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 18:04:48.221 +03:00  INF]  Executed DbCommand (13ms) [Parameters=[@__user_ID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__user_ID_0
+[2022-07-04 18:04:48.353 +03:00  INF]  Executed DbCommand (119ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [Name] = @p0
+WHERE [ID] = @p1;
+SELECT @@ROWCOUNT;
+[2022-07-04 18:04:48.382 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 18:04:48.383 +03:00  INF]  Executed action Controllers.UserController.Update (HRM.WebApi) in 948.8355ms
+[2022-07-04 18:04:48.383 +03:00  INF]  Executed endpoint 'Controllers.UserController.Update (HRM.WebApi)'
+[2022-07-04 18:04:48.383 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/Update application/json 312 - 200 - application/json;+charset=utf-8 951.8185ms
+[2022-07-04 18:07:11.592 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/Vacation/Create application/json 214
+[2022-07-04 18:07:11.593 +03:00  INF]  Executing endpoint 'Controllers.VacationController.Create (HRM.WebApi)'
+[2022-07-04 18:07:11.599 +03:00  INF]  Route matched with {action = "Create", controller = "Vacation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.VacationDto) on controller Controllers.VacationController (HRM.WebApi).
+[2022-07-04 18:07:11.619 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 18:07:11.620 +03:00  INF]  Executed action Controllers.VacationController.Create (HRM.WebApi) in 20.4231ms
+[2022-07-04 18:07:11.620 +03:00  INF]  Executed endpoint 'Controllers.VacationController.Create (HRM.WebApi)'
+[2022-07-04 18:07:11.620 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/Vacation/Create application/json 214 - 400 - application/problem+json;+charset=utf-8 27.5944ms
+[2022-07-04 18:07:26.500 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/Vacation/Create application/json 213
+[2022-07-04 18:07:26.503 +03:00  INF]  Executing endpoint 'Controllers.VacationController.Create (HRM.WebApi)'
+[2022-07-04 18:07:26.504 +03:00  INF]  Route matched with {action = "Create", controller = "Vacation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.VacationDto) on controller Controllers.VacationController (HRM.WebApi).
+[2022-07-04 18:07:26.517 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:07:26.590 +03:00  INF]  Executed DbCommand (23ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (Size = 4000), @p4='?' (DbType = Date), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Vacations] ([ID], [CreationDate], [Duration], [Note], [StartingDate], [Status], [Type], [UserId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+[2022-07-04 18:07:26.593 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.VacationDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 18:07:26.599 +03:00  INF]  Executed action Controllers.VacationController.Create (HRM.WebApi) in 95.4809ms
+[2022-07-04 18:07:26.599 +03:00  INF]  Executed endpoint 'Controllers.VacationController.Create (HRM.WebApi)'
+[2022-07-04 18:07:26.600 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/Vacation/Create application/json 213 - 200 - application/json;+charset=utf-8 99.2814ms
+[2022-07-04 18:25:14.641 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 18:25:15.720 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 18:25:15.720 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 18:25:15.725 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 18:25:15.725 +03:00  INF]  Hosting environment: Development
+[2022-07-04 18:25:15.725 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 18:34:19.169 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 18:34:19.903 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 18:34:19.910 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 18:34:19.914 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 18:34:19.914 +03:00  INF]  Hosting environment: Development
+[2022-07-04 18:34:19.914 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 18:34:21.676 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 18:34:22.691 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 1020.7672ms
+[2022-07-04 18:34:22.886 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 18:34:22.929 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 18:34:22.949 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 63.2030ms
+[2022-07-04 18:34:23.017 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 88.1377ms
+[2022-07-04 18:34:23.240 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 18:34:23.498 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 257.2668ms
+[2022-07-04 18:36:26.909 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 367
+[2022-07-04 18:36:26.923 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 18:36:27.030 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.CreateUserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:36:28.932 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:36:30.042 +03:00  INF]  Executed DbCommand (125ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 18:36:33.395 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 18:36:33.438 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 6397.425ms
+[2022-07-04 18:36:33.439 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 18:36:33.445 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 367 - 200 - application/json;+charset=utf-8 6536.0578ms
+[2022-07-04 18:37:45.127 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:37:45.131 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:37:45.134 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:37:45.353 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:37:45.909 +03:00  INF]  Executed DbCommand (17ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:37:45.926 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:37:45.927 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 792.5709ms
+[2022-07-04 18:37:45.927 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:37:45.927 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 800.5470ms
+[2022-07-04 18:38:00.366 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:38:00.366 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:00.366 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:38:00.384 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:38:00.401 +03:00  INF]  Executed DbCommand (11ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:38:00.402 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:38:00.402 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 35.4465ms
+[2022-07-04 18:38:00.402 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:00.403 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 400 - application/json;+charset=utf-8 36.8249ms
+[2022-07-04 18:38:20.570 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:38:20.571 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:20.572 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:38:20.578 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:38:20.602 +03:00  INF]  Executed DbCommand (23ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:38:20.602 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:38:20.602 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 30.3847ms
+[2022-07-04 18:38:20.603 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:20.603 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 32.3518ms
+[2022-07-04 18:38:26.319 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 83
+[2022-07-04 18:38:26.319 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:26.319 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:38:26.321 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:38:26.471 +03:00  INF]  Executed DbCommand (150ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:38:26.471 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:38:26.472 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 152.2792ms
+[2022-07-04 18:38:26.472 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:26.472 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 83 - 400 - application/json;+charset=utf-8 152.9011ms
+[2022-07-04 18:38:30.168 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 83
+[2022-07-04 18:38:30.169 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:30.169 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:38:30.170 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:38:30.179 +03:00  INF]  Executed DbCommand (8ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:38:30.179 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:38:30.179 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 10.44ms
+[2022-07-04 18:38:30.179 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:30.179 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 83 - 400 - application/json;+charset=utf-8 11.2958ms
+[2022-07-04 18:38:36.363 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:38:36.363 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:36.363 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:38:36.365 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:38:36.392 +03:00  INF]  Executed DbCommand (26ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:38:36.392 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:38:36.392 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 28.6571ms
+[2022-07-04 18:38:36.392 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:38:36.392 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 29.5686ms
+[2022-07-04 18:39:10.724 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81
+[2022-07-04 18:39:10.725 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:39:10.726 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:39:10.730 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:39:10.776 +03:00  INF]  Executed DbCommand (40ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 18:39:10.779 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:39:10.780 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:39:10.780 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 53.6114ms
+[2022-07-04 18:39:10.780 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:39:10.780 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81 - 200 - application/json;+charset=utf-8 55.7793ms
+[2022-07-04 18:39:30.013 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81
+[2022-07-04 18:39:30.014 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:39:30.014 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:39:30.033 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 18:39:30.040 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 26.3198ms
+[2022-07-04 18:39:30.040 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:39:30.040 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81 - 400 - application/problem+json;+charset=utf-8 26.9844ms
+[2022-07-04 18:46:39.682 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81
+[2022-07-04 18:46:39.682 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:46:39.683 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:46:39.685 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 18:46:39.685 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 2.2919ms
+[2022-07-04 18:46:39.685 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:46:39.685 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81 - 400 - application/problem+json;+charset=utf-8 3.5614ms
+[2022-07-04 18:48:09.018 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81
+[2022-07-04 18:48:09.018 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:48:09.018 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:48:09.019 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:48:09.048 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 18:48:09.093 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:48:29.287 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:48:51.908 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 18:48:52.389 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 18:48:52.389 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 18:48:52.396 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 18:48:52.396 +03:00  INF]  Hosting environment: Development
+[2022-07-04 18:48:52.396 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 18:48:53.535 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 18:48:54.257 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 728.5996ms
+[2022-07-04 18:48:54.363 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 18:48:54.367 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 18:48:54.371 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 8.8601ms
+[2022-07-04 18:48:54.464 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 96.0359ms
+[2022-07-04 18:48:54.621 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 18:48:54.951 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 330.3635ms
+[2022-07-04 18:49:13.586 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:49:13.614 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:49:13.657 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:49:15.267 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:49:16.195 +03:00  INF]  Executed DbCommand (60ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:49:16.338 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:49:16.358 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 2688.9526ms
+[2022-07-04 18:49:16.358 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:49:16.365 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 400 - application/json;+charset=utf-8 2778.1858ms
+[2022-07-04 18:49:28.313 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:49:28.332 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:49:28.333 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:49:28.337 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:49:28.362 +03:00  INF]  Executed DbCommand (14ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:49:28.364 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:49:28.365 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 31.5158ms
+[2022-07-04 18:49:28.365 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:49:28.365 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 52.1028ms
+[2022-07-04 18:49:30.660 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:49:30.662 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:49:30.662 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:49:30.815 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:49:30.818 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:49:30.818 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:49:30.819 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 155.8377ms
+[2022-07-04 18:49:30.819 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:49:30.819 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 159.1510ms
+[2022-07-04 18:49:55.437 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 82
+[2022-07-04 18:49:55.437 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:49:55.445 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:49:55.452 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:49:55.459 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 18:49:55.462 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:50:10.646 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:50:14.188 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 18742.0737ms
+[2022-07-04 18:50:14.188 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:50:14.188 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 82 - 200 - application/json;+charset=utf-8 18751.0446ms
+[2022-07-04 18:51:10.465 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81
+[2022-07-04 18:51:10.467 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:51:10.467 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:51:10.469 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:51:10.473 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 18:51:10.480 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:51:12.843 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:51:12.843 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 2375.7741ms
+[2022-07-04 18:51:12.843 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:51:12.843 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81 - 200 - application/json;+charset=utf-8 2378.1329ms
+[2022-07-04 18:51:21.461 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81
+[2022-07-04 18:51:21.461 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:51:21.461 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult ResetPassword(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:51:21.463 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:51:21.465 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 18:51:21.466 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:51:24.045 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:51:24.046 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 2584.1186ms
+[2022-07-04 18:51:24.046 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 18:51:24.046 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 81 - 200 - application/json;+charset=utf-8 2584.8211ms
+[2022-07-04 18:51:32.602 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:51:32.602 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:51:32.602 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:51:32.604 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:51:32.605 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:51:32.606 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:51:32.606 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 3.4593ms
+[2022-07-04 18:51:32.606 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:51:32.606 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 3.9733ms
+[2022-07-04 18:51:35.508 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 18:51:35.508 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:51:35.508 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:51:35.509 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:51:35.510 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:51:35.510 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:51:35.511 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 2.6205ms
+[2022-07-04 18:51:35.511 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:51:35.511 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 3.1260ms
+[2022-07-04 18:51:47.148 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 81
+[2022-07-04 18:51:47.148 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:51:47.148 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 18:51:47.149 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 18:51:47.153 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 18:51:47.153 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 18:51:47.153 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 5.0203ms
+[2022-07-04 18:51:47.153 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 18:51:47.154 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 81 - 400 - application/json;+charset=utf-8 5.4591ms
+[2022-07-04 19:06:51.358 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 19:06:52.252 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 19:06:52.253 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 19:06:52.257 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 19:06:52.257 +03:00  INF]  Hosting environment: Development
+[2022-07-04 19:06:52.257 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 19:06:55.256 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 19:06:56.144 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 894.0846ms
+[2022-07-04 19:06:56.299 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 19:06:56.299 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 19:06:56.307 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 6.8933ms
+[2022-07-04 19:06:56.362 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.9131ms
+[2022-07-04 19:06:56.593 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 19:06:57.239 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 645.8188ms
+[2022-07-04 19:07:29.045 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 82
+[2022-07-04 19:07:29.060 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:07:29.106 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 19:07:31.600 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 19:07:33.054 +03:00  INF]  Executed DbCommand (173ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 19:07:33.242 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 19:07:33.267 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 4150.5009ms
+[2022-07-04 19:07:33.268 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:07:33.274 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 82 - 200 - application/json;+charset=utf-8 4228.9546ms
+[2022-07-04 19:07:39.149 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 83
+[2022-07-04 19:07:39.153 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:07:39.153 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 19:07:39.158 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 19:07:39.240 +03:00  INF]  Executed DbCommand (70ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 19:07:39.242 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 19:07:39.242 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 88.876ms
+[2022-07-04 19:07:39.242 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:07:39.243 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 83 - 400 - application/json;+charset=utf-8 93.7566ms
+[2022-07-04 19:08:17.131 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 103
+[2022-07-04 19:08:17.132 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 19:08:17.155 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(HRM.Models.ResetPasswordDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 19:08:17.335 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 19:08:17.384 +03:00  INF]  Executed DbCommand (36ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 19:08:17.395 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@__resetPasswordDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__resetPasswordDto_UserName_0
+[2022-07-04 19:08:22.138 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 19:08:22.138 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 4982.9279ms
+[2022-07-04 19:08:22.138 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 19:08:22.139 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 103 - 400 - application/json;+charset=utf-8 5007.5454ms
+[2022-07-04 19:08:40.133 +03:00  INF]  Request starting HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 108
+[2022-07-04 19:08:40.133 +03:00  INF]  Executing endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 19:08:40.133 +03:00  INF]  Route matched with {action = "ResetPassword", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ResetPassword(HRM.Models.ResetPasswordDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 19:08:40.164 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 19:08:40.183 +03:00  INF]  Executed DbCommand (19ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-04 19:08:40.193 +03:00  INF]  Executed DbCommand (9ms) [Parameters=[@__resetPasswordDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__resetPasswordDto_UserName_0
+[2022-07-04 19:08:40.448 +03:00  INF]  Executed DbCommand (31ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Users] SET [Password] = @p0
+WHERE [ID] = @p1;
+SELECT @@ROWCOUNT;
+[2022-07-04 19:08:43.110 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 19:08:43.111 +03:00  INF]  Executed action Controllers.UserController.ResetPassword (HRM.WebApi) in 2970.929ms
+[2022-07-04 19:08:43.112 +03:00  INF]  Executed endpoint 'Controllers.UserController.ResetPassword (HRM.WebApi)'
+[2022-07-04 19:08:43.113 +03:00  INF]  Request finished HTTP/2 PUT https://localhost:7266/api/User/ResetPassword application/json 108 - 200 - application/json;+charset=utf-8 2980.6101ms
+[2022-07-04 19:08:53.304 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 83
+[2022-07-04 19:08:53.304 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:08:53.304 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 19:08:53.307 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 19:08:53.327 +03:00  INF]  Executed DbCommand (20ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 19:08:53.328 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 19:08:53.328 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 23.9507ms
+[2022-07-04 19:08:53.328 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:08:53.328 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 83 - 400 - application/json;+charset=utf-8 24.6602ms
+[2022-07-04 19:08:58.764 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Login application/json 76
+[2022-07-04 19:08:58.765 +03:00  INF]  Executing endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:08:58.765 +03:00  INF]  Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(HRM.Models.LoginDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 19:08:58.766 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 19:08:58.829 +03:00  INF]  Executed DbCommand (63ms) [Parameters=[@__loginDto_UserName_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__loginDto_UserName_0
+[2022-07-04 19:08:58.829 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-04 19:08:58.829 +03:00  INF]  Executed action Controllers.UserController.Login (HRM.WebApi) in 64.6064ms
+[2022-07-04 19:08:58.829 +03:00  INF]  Executed endpoint 'Controllers.UserController.Login (HRM.WebApi)'
+[2022-07-04 19:08:58.829 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Login application/json 76 - 200 - application/json;+charset=utf-8 65.1503ms
