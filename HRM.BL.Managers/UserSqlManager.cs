@@ -26,7 +26,7 @@ namespace HRM.BL.Managers
                 {
                     return new Response<UserEntity>(ErrorCodes.UserNotFound,"Manager Not Found");
                 }
-                var manager = _hrmContext.Users.FirstOrDefault(x=>x.ID==managerID);
+                var manager = _hrmContext.Users.FirstOrDefault(x => x.ID == managerID && x.Type == true);
                 return new Response<UserEntity>(manager);
             }
             catch(Exception ex)
@@ -61,7 +61,7 @@ namespace HRM.BL.Managers
             {
                 var user = _hrmContext.Users.FirstOrDefault(x => x.ID == id);
                 if(user==null) return new Response<UserDto>(ErrorCodes.UserNotFound, "No user found with such ID");
-                return new Response<UserDto>(_userEntityMapper.Map(user, FindManagerByID(user.ID).Data));
+                return new Response<UserDto>(_userEntityMapper.Map(user, FindManagerByID(user.ManagerID).Data));
             }
             catch (Exception ex)
             { 
@@ -69,13 +69,13 @@ namespace HRM.BL.Managers
             }
         }
         
-        public Response<List<UserDto>> GetUsersList(Guid managerID,[FromQuery] Paging @param)
+        public Response<List<UserDto>> GetUsersList(Guid managerID,Paging page)
         {
 
             List<UserDto> _users = new List<UserDto>();
             try
             {
-                var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).Where(x=>x.ManagerID==managerID).ToList();
+                var choosenUser = _hrmContext.Users.Skip((page.Page - 1)* page.ItemsPerPage).Take(page.ItemsPerPage).Where(x=>x.ManagerID==managerID).ToList();
                 foreach (var i in choosenUser)
                 {
                     _users.Add(_userEntityMapper.Map(i, FindManagerByID(managerID).Data));

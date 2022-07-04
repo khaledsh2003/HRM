@@ -52,11 +52,12 @@ namespace Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll(Guid managerID,[FromQuery] Paging page)
+        public IActionResult GetAll(Guid managerID,int PagesNum, int ItemsPerPage)
         {
+            Paging page = new Paging(PagesNum,ItemsPerPage);
             try
             {
-                Response<List<UserDto>> users = _userManager.GetUsersList(managerID,page);
+                Response<List<UserDto>> users = _userManager.GetUsersList(managerID, page);
                 if (users.ErrorCode == 0) return Ok(users);
                 else return BadRequest(users);
             }
