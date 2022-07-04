@@ -21,14 +21,14 @@ namespace HRM.BL.Managers
             _hrmContext = hrmContext;
             _userEntityMapper = new UserEntityMapper();
         }
-        public Response<UserDto> Create(UserDto user)
+        public async Task<Response<UserDto>> Create(UserDto user)
         {
             try
             {
                 string hashedPassword = PasswordHash.HashText(_password,"khaled", new SHA1CryptoServiceProvider());
                 var userToCreate = new UserEntity() { Name = user.Name, Type = user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.ManagerID, CreationDate = DateTime.Now };
                 _hrmContext.Users.Add(userToCreate);
-                _hrmContext.SaveChanges();
+                await _hrmContext.SaveChangesAsync();
                 return new Response<UserDto>(_userEntityMapper.Map(userToCreate));
             }
             catch (Exception ex)
@@ -50,13 +50,13 @@ namespace HRM.BL.Managers
             }
         }
         
-        public Response<List<UserDto>> GetUsersList([FromQuery] Paging @param)
+        public Response<List<UserDto>> GetUsersList(Guid managerID,[FromQuery] Paging @param)
         {
 
             List<UserDto> _users = new List<UserDto>();
 \            try
             {
-                var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).Where(x=>x.ManagerID==@param.ManagerID).ToList();
+                var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).Where(x=>x.ManagerID==managerID).ToList();
                 foreach (var i in choosenUser)
                 {
                     _users.Add(_userEntityMapper.Map(i));
@@ -68,7 +68,7 @@ namespace HRM.BL.Managers
                 return new Response<List<UserDto>>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public Response<UserDto> Update(UserDto user)
+        public async Task<Response<UserDto>> Update(UserDto user)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace HRM.BL.Managers
                 if (!string.IsNullOrEmpty(user.Email)) userToUpdate.Email = user.Email;
                 if (!string.IsNullOrEmpty(user.JobTitle)) userToUpdate.JobTitle = user.JobTitle;
                 if (!string.IsNullOrEmpty(user.Name)) userToUpdate.Name = user.Name;
-                _hrmContext.SaveChanges();
+                await _hrmContext.SaveChangesAsync();
                 return new Response<UserDto>(_userEntityMapper.Map(userToUpdate));
             }
             catch (Exception ex)
@@ -90,7 +90,7 @@ namespace HRM.BL.Managers
                 return new Response<UserDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public Response<bool> Delete(Guid id)
+        public async Task<Response<bool>> Delete(Guid id)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace HRM.BL.Managers
                 if (userToDelete != null)
                 {
                     _hrmContext.Remove(userToDelete);
-                    _hrmContext.SaveChanges();
+                    await _hrmContext.SaveChangesAsync();
                     return new Response<bool>(true);
                 }
                 return new Response<bool>(false);

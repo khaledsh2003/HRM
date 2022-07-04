@@ -1,7 +1,6 @@
 ﻿
 namespace HRM.Models
 {
-    //in models
     public class Response<T>
     {
         public Response(ErrorCodes errorCode, string description)

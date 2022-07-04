@@ -1,5 +1,6 @@
 ﻿using HRM.Models;
 using HRM.Responses;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace HRM.BL.Interface
     public interface IVacationManager
     {
         public Task<Response<VacationDto>> Create(VacationDto vacation);
-        public Task<Response<List<VacationDto>>> GetVacationList();
+        public Response<List<VacationDto>> GetVacationList([FromQuery] Paging @param);
         public Task<Response<VacationDto>> Update(VacationDto vacation);
         public Task<Response<bool>> Delete(Guid id);
     }

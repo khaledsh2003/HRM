@@ -62,7 +62,7 @@ namespace HRM.BL.Managers
                 if (vacation.Duration > 0) vacationToUpdate.Duration = vacation.Duration;
                 if (vacation.Status >= 0 && vacation.Status <= 3) vacationToUpdate.Status = vacation.Status;
                 if (!string.IsNullOrEmpty(vacation.Note)) vacationToUpdate.Note = vacation.Note;
-                _hrmContext.SaveChanges();
+                await _hrmContext.SaveChangesAsync();
                 return new Response<VacationDto>(_vacationEntityMapper.Map(vacationToUpdate));
             }
             catch (Exception ex)
@@ -70,7 +70,7 @@ namespace HRM.BL.Managers
                 return new Response<VacationDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public Task<Response<bool>> Delete(Guid id)
+        public async Task<Response<bool>> Delete(Guid id)
         {
             try
             {
@@ -78,7 +78,7 @@ namespace HRM.BL.Managers
                 if (vacationToDelete != null)
                 {
                     _hrmContext.Remove(vacationToDelete);
-                    _hrmContext.SaveChanges();
+                    await _hrmContext.SaveChangesAsync();
                     return new Response<bool>(true);
                 }
                 return new Response<bool>(false);
