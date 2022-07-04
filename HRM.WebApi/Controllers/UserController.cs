@@ -21,11 +21,11 @@ namespace Controllers
             _logger = logger;
         }
         [HttpPost]
-        public IActionResult Create([FromBody] UserDto user)
+        public async Task<IActionResult> Create([FromBody] UserDto user)
         {
             try
             {
-                Response<UserDto> newUser = _userManager.Create(user);
+                Response<UserDto> newUser = await _userManager.Create(user);
                 if(newUser.ErrorCode==0) return Ok(newUser);
                 else return BadRequest(newUser);
             }
@@ -52,11 +52,11 @@ namespace Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll(Guid managerID, Paging page)
         {
             try
             {
-                Response<List<UserDto>> users = _userManager.GetUsersList();
+                Response<List<UserDto>> users = _userManager.GetUsersList(managerID,page);
                 if (users.ErrorCode == 0) return Ok(users);
                 else return BadRequest(users);
             }
@@ -67,11 +67,11 @@ namespace Controllers
             }
         }
         [HttpGet]
-        public IActionResult Remove(Guid id)
+        public async Task<IActionResult> Remove(Guid id)
         {
             try
             {
-                Response<bool> isDeleted = _userManager.Delete(id);
+                Response<bool> isDeleted = await _userManager.Delete(id);
                 if (isDeleted.ErrorCode == 0) return Ok(isDeleted);
                 else return BadRequest(isDeleted);
             }
@@ -112,11 +112,11 @@ namespace Controllers
             }
         }
         [HttpPut]
-        public IActionResult Update(UserDto user)
+        public async Task<IActionResult> Update(UserDto user)
         {
             try
             {
-                Response<UserDto> updatedUser = _userManager.Update(user);
+                Response<UserDto> updatedUser =await _userManager.Update(user);
                 if (updatedUser.ErrorCode == 0) return Ok(updatedUser);
                 else return BadRequest(updatedUser);
             }

@@ -25,9 +25,9 @@ namespace Controllers
         {
             try
             {
-                Task<Response<VacationDto>> newVacation = _vacationManager.Create(vacation);
-                if (newVacation.Result.ErrorCode == 0) return Ok(newVacation.Result); 
-                else return BadRequest(newVacation.Result);
+                Response<VacationDto> newVacation = await _vacationManager.Create(vacation);
+                if (newVacation.ErrorCode == 0) return Ok(newVacation); 
+                else return BadRequest(newVacation);
             }
             catch (Exception ex)
             {
@@ -36,11 +36,11 @@ namespace Controllers
             }
         }
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll(Paging page)
         {
             try
             {
-                Response<List<VacationDto>> vacation = _vacaionManager.GetVacationList();
+                Response<List<VacationDto>> vacation = _vacationManager.GetVacationList(page);
                 if (vacation.ErrorCode == 0) return Ok(vacation);
                 else return BadRequest(vacation);
             }
@@ -51,11 +51,11 @@ namespace Controllers
             }
         }
         [HttpGet]
-        public IActionResult Remove(Guid id)
+        public async Task<IActionResult> Remove(Guid id)
         {
             try
             {
-                Response<bool> isDeleted = _vacaionManager.Delete(id);
+                Response<bool> isDeleted = await _vacationManager.Delete(id);
                 if (isDeleted.ErrorCode == 0) return Ok(isDeleted);
                 else return BadRequest(isDeleted);
             }
@@ -66,11 +66,11 @@ namespace Controllers
             }
         }
         [HttpPut]
-        public IActionResult Update(VacationDto vacationDto)
+        public async Task<IActionResult> Update(VacationDto vacationDto)
         {
             try
             {
-                Response<VacationDto> updatedVacation = _vacaionManager.Update(vacationDto);
+                Response<VacationDto> updatedVacation = await _vacationManager.Update(vacationDto);
                 if (updatedVacation.ErrorCode == 0) return Ok(updatedVacation);
                 else return BadRequest(updatedVacation);
             }
