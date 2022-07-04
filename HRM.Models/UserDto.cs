@@ -8,7 +8,7 @@
         public string MobileNumber { get; set; }
         public string Email { get; set; }
         public string JobTitle { get; set; }
-        public UserDto Manager { get; set; }
+        public ManagerDto Manager { get; set; }
 
     }
 }

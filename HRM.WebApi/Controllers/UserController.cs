@@ -21,7 +21,7 @@ namespace Controllers
             _logger = logger;
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] UserDto user)
+        public async Task<IActionResult> Create(UserDto user)
         {
             try
             {

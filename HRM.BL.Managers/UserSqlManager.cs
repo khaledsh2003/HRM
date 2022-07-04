@@ -10,14 +10,12 @@ namespace HRM.BL.Managers
 {
     public class UserSqlManager : IUserManager 
     {
-        private readonly IUserManager _userManager;
         private readonly HrmContext _hrmContext;
         private UserEntityMapper _userEntityMapper;
         private PasswordHash _hashPassword;
         public string _password { get; set; }
-        public UserSqlManager(IUserManager userManager, HrmContext hrmContext)
+        public UserSqlManager(HrmContext hrmContext)
         {
-            _userManager = userManager;
             _hrmContext = hrmContext;
             _userEntityMapper = new UserEntityMapper();
         }
@@ -26,7 +24,7 @@ namespace HRM.BL.Managers
             try
             {
                 string hashedPassword = PasswordHash.HashText(_password,"khaled", new SHA1CryptoServiceProvider());
-                var userToCreate = new UserEntity() { Name = user.Name, Type = user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.ManagerID, CreationDate = DateTime.Now };
+                var userToCreate = new UserEntity() { Name = user.Name, Type = user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.Manager.ID, CreationDate = DateTime.Now };
                 _hrmContext.Users.Add(userToCreate);
                 await _hrmContext.SaveChangesAsync();
                 return new Response<UserDto>(_userEntityMapper.Map(userToCreate));
@@ -54,7 +52,7 @@ namespace HRM.BL.Managers
         {
 
             List<UserDto> _users = new List<UserDto>();
-\            try
+            try
             {
                 var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).Where(x=>x.ManagerID==managerID).ToList();
                 foreach (var i in choosenUser)

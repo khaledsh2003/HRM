@@ -8,12 +8,10 @@ namespace HRM.BL.Managers
 {
     public class VacationSqlManager : IVacationManager
     {
-        private readonly IVacationManager _vacationManager;
         private readonly HrmContext _hrmContext;
         private VacationEntityMapper _vacationEntityMapper;
-        VacationSqlManager(IVacationManager vacationManager, HrmContext hrmContext)
+        public VacationSqlManager(HrmContext hrmContext)
         {
-            _vacationManager = vacationManager;
             _hrmContext = hrmContext;
             _vacationEntityMapper = new VacationEntityMapper();
         }

@@ -15,13 +15,14 @@ namespace HRM.Mapping
                 MobileNumber = user.MobileNumber,
                 Email = user.Email,
                 JobTitle = user.JobTitle,
-                Manager = new UserDto()
+                Manager = new ManagerDto()
             };
             if (user.ManagerID != null || user.ManagerID != Guid.Empty)
             {
-                temp.Manager = new UserDto();
+                temp.Manager = new ManagerDto();
                 temp.Manager.ID = user.ID;
                 temp.Manager.Name = user.Name;
+                temp.Manager.Type = user.Type;
                 temp.Manager.MobileNumber = user.MobileNumber;
                 temp.Manager.Email = user.Email;
                 temp.Manager.JobTitle = user.JobTitle;    
