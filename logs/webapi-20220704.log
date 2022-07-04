@@ -76,3 +76,117 @@
 [2022-07-04 15:42:41.521 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 125.1776ms
 [2022-07-04 15:42:41.854 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
 [2022-07-04 15:42:42.462 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 605.9500ms
+[2022-07-04 15:45:21.623 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 325
+[2022-07-04 15:45:21.654 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:45:21.745 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 15:45:22.390 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 15:45:22.410 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 652.7758ms
+[2022-07-04 15:45:22.412 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:45:22.415 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 325 - 400 - application/problem+json;+charset=utf-8 792.1744ms
+[2022-07-04 15:46:19.355 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 332
+[2022-07-04 15:46:19.358 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:46:19.359 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 15:46:19.375 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 15:46:19.376 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 17.0032ms
+[2022-07-04 15:46:19.376 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:46:19.376 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 332 - 400 - application/problem+json;+charset=utf-8 21.5839ms
+[2022-07-04 15:48:34.863 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 325
+[2022-07-04 15:48:34.863 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:48:34.863 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 15:48:34.870 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 15:48:34.870 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 7.3409ms
+[2022-07-04 15:48:34.871 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:48:34.871 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 325 - 400 - application/problem+json;+charset=utf-8 8.2111ms
+[2022-07-04 15:49:06.268 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 289
+[2022-07-04 15:49:06.269 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:49:06.269 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 15:49:06.270 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+[2022-07-04 15:49:06.270 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 1.4645ms
+[2022-07-04 15:49:06.270 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:49:06.271 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 289 - 400 - application/problem+json;+charset=utf-8 2.3251ms
+[2022-07-04 15:54:02.465 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 15:54:03.269 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 15:54:03.269 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 15:54:03.274 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 15:54:03.274 +03:00  INF]  Hosting environment: Development
+[2022-07-04 15:54:03.275 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 15:54:04.257 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 15:54:04.789 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 541.7674ms
+[2022-07-04 15:54:04.862 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 15:54:04.865 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 15:54:04.867 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 4.5544ms
+[2022-07-04 15:54:04.921 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 55.2229ms
+[2022-07-04 15:54:05.045 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 15:54:05.319 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 274.2002ms
+[2022-07-04 15:54:17.821 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 15:54:18.578 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 15:54:18.579 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 15:54:18.583 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 15:54:18.583 +03:00  INF]  Hosting environment: Development
+[2022-07-04 15:54:18.583 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 15:54:19.626 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 15:54:20.317 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 697.8593ms
+[2022-07-04 15:54:20.353 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 15:54:20.353 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 15:54:20.371 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 16.1843ms
+[2022-07-04 15:54:20.478 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 125.2438ms
+[2022-07-04 15:54:20.627 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 15:54:20.995 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 367.7190ms
+[2022-07-04 15:54:32.794 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 347
+[2022-07-04 15:54:32.816 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:54:32.914 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 15:54:34.783 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 15:54:36.792 +03:00  INF]  Executed DbCommand (150ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 15:59:03.766 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 15:59:23.938 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 291014.3576ms
+[2022-07-04 15:59:23.939 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 15:59:23.946 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 347 - 200 - application/json;+charset=utf-8 291152.1729ms
+[2022-07-04 16:00:58.172 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 347
+[2022-07-04 16:00:58.187 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 16:00:58.187 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 16:00:58.303 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 16:00:58.429 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 16:02:09.570 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 16:02:14.277 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 76089.3668ms
+[2022-07-04 16:02:14.277 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 16:02:14.277 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 347 - 200 - application/json;+charset=utf-8 76105.6722ms
+[2022-07-04 16:02:24.125 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 347
+[2022-07-04 16:02:24.125 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 16:02:24.125 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 16:02:24.151 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 16:02:24.161 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 16:51:15.898 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-04 16:51:16.594 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-04 16:51:16.594 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-04 16:51:16.599 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-04 16:51:16.599 +03:00  INF]  Hosting environment: Development
+[2022-07-04 16:51:16.599 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-04 16:51:18.169 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-04 16:51:18.968 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 805.3225ms
+[2022-07-04 16:51:19.021 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-04 16:51:19.027 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-04 16:51:19.048 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 29.7967ms
+[2022-07-04 16:51:19.381 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 354.7977ms
+[2022-07-04 16:51:19.533 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-04 16:51:19.879 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 345.7869ms
+[2022-07-04 16:51:31.127 +03:00  INF]  Request starting HTTP/2 POST https://localhost:7266/api/User/Create application/json 347
+[2022-07-04 16:51:31.144 +03:00  INF]  Executing endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 16:51:31.230 +03:00  INF]  Route matched with {action = "Create", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(HRM.Models.UserDto) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-04 16:51:33.280 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-04 16:51:34.815 +03:00  INF]  Executed DbCommand (176ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 100), @p3='?' (Size = 70), @p4='?' (DbType = Guid), @p5='?' (Size = 70), @p6='?' (Size = 50), @p7='?' (Size = 100), @p8='?' (DbType = Boolean)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Users] ([ID], [CreationDate], [Email], [JobTitle], [ManagerID], [MobileNumber], [Name], [Password], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[2022-07-04 16:53:28.668 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[2022-07-04 16:53:28.982 +03:00  INF]  Executed action Controllers.UserController.Create (HRM.WebApi) in 117733.6018ms
+[2022-07-04 16:53:28.983 +03:00  INF]  Executed endpoint 'Controllers.UserController.Create (HRM.WebApi)'
+[2022-07-04 16:53:28.990 +03:00  INF]  Request finished HTTP/2 POST https://localhost:7266/api/User/Create application/json 347 - 200 - application/json;+charset=utf-8 117863.1995ms
