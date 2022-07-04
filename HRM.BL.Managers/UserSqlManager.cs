@@ -3,7 +3,7 @@ using HRM.DAL.EF;
 using HRM.Mapping;
 using HRM.Models;
 using HRM.PasswordHashing;
-using HRM.Responses;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
 
 namespace HRM.BL.Managers
@@ -49,12 +49,14 @@ namespace HRM.BL.Managers
                 return new Response<UserDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public Response<List<UserDto>> GetUsersList()
+        
+        public Response<List<UserDto>> GetUsersList([FromQuery] Paging @param)
         {
+
             List<UserDto> _users = new List<UserDto>();
-            try
+\            try
             {
-                var choosenUser = _hrmContext.Users.ToList();
+                var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).ToList();
                 foreach (var i in choosenUser)
                 {
                     _users.Add(_userEntityMapper.Map(i));

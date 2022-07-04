@@ -30,7 +30,7 @@ namespace HRM.BL.Managers
                 return new Response<VacationDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public Task<Response<List<VacationDto>>> GetVacationList()
+        public async Task<Response<List<VacationDto>>> GetVacationList()//manager id - > model getvacationsrequest - pagination-
         {
             List<VacationDto> _vacation = new List<VacationDto>();
             try
@@ -47,7 +47,7 @@ namespace HRM.BL.Managers
                 return new Response<List<VacationDto>>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public Task<Response<VacationDto>> Update(VacationDto vacation)
+        public async Task<Response<VacationDto>> Update(VacationDto vacation)
         {
             try
             {

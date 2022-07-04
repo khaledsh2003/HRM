@@ -21,18 +21,18 @@ namespace Controllers
             _logger = logger;
         }
         [HttpPost]
-        public Task<IActionResult> Create([FromBody] VacationDto vacation)
+        public async Task<IActionResult> Create([FromBody] VacationDto vacation)
         {
             try
             {
                 Task<Response<VacationDto>> newVacation = _vacationManager.Create(vacation);
-                if (newVacation. == 0) return Ok(newUser.Data); 
-                else return BadRequest(newVacation.Description);
+                if (newVacation.Result.ErrorCode == 0) return Ok(newVacation.Result); 
+                else return BadRequest(newVacation.Result);
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex.ToString());
-                return BadRequest();
+                _logger.LogCritical("VacationController - Create", ex);
+                return BadRequest(new Response<bool>(ErrorCodes.Unexpected, "Unexpected error in VacationController - Create"));
             }
         }
         [HttpGet]
