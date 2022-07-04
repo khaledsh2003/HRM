@@ -56,7 +56,7 @@ namespace HRM.BL.Managers
             List<UserDto> _users = new List<UserDto>();
 \            try
             {
-                var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).ToList();
+                var choosenUser = _hrmContext.Users.Skip((@param.Page - 1)* @param.ItemsPerPage).Take(@param.ItemsPerPage).Where(x=>x.ManagerID==@param.ManagerID).ToList();
                 foreach (var i in choosenUser)
                 {
                     _users.Add(_userEntityMapper.Map(i));

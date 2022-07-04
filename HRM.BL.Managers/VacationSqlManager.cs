@@ -2,6 +2,7 @@
 using HRM.DAL.EF;
 using HRM.Mapping;
 using HRM.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.BL.Managers
 {
@@ -30,12 +31,12 @@ namespace HRM.BL.Managers
                 return new Response<VacationDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public async Task<Response<List<VacationDto>>> GetVacationList()//manager id - > model getvacationsrequest - pagination-
+        public Response<List<VacationDto>> GetVacationList([FromQuery] Paging @param)
         {
             List<VacationDto> _vacation = new List<VacationDto>();
             try
             {
-                var choosenVacation = _hrmContext.Vacations.ToList();
+                var choosenVacation = _hrmContext.Vacations.Skip((@param.Page - 1) * @param.ItemsPerPage).Take(@param.ItemsPerPage).ToList(); ;
                 foreach (var i in choosenVacation)
                 {
                     _vacation.Add(_vacationEntityMapper.Map(i));

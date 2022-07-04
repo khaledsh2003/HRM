@@ -1,5 +1,6 @@
 ﻿using HRM.Models;
 using HRM.Responses;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.BL.Interface
 {
@@ -7,7 +8,7 @@ namespace HRM.BL.Interface
     {
         public Response<UserDto> Create(UserDto user);
         public Response<UserDto> GetByID(Guid id);
-        public Response<List<UserDto>> GetUsersList();
+        public Response<List<UserDto>> GetUsersList(int managerId,[FromQuery] Paging @param);
         public Response<UserDto> Update(UserDto user);
         public Response<bool> Delete(Guid id);
         public Response<bool> Login(LoginDto loginDto);

@@ -8,6 +8,7 @@ namespace HRM.Models
 {
     public class Paging
     {
+        public int ManagerID;
         public int Page { get; set; } = 1;
         public int ItemsPerPage { get; set; } = 10;
     }
