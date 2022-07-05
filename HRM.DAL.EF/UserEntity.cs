@@ -25,9 +25,6 @@ namespace HRM.DAL.EF
         [MaxLength(70)]
         public string JobTitle { get; set; }
         public Guid? ManagerID { get; set; }
-
-        public virtual UserEntity  Manager { get; set; }
-
         public DateTime CreationDate { get; set; }
     }
 }

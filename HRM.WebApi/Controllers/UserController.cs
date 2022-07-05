@@ -23,7 +23,7 @@ namespace Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateUserDto createUserDto)
         {
-            try
+            try 
             {
                 Response<UserDto> newUser = await _userManager.Create(createUserDto);
                 if(newUser.ErrorCode==0) return Ok(newUser);
@@ -51,13 +51,12 @@ namespace Controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult GetAll(Guid managerID,int PagesNum, int ItemsPerPage)
+        [HttpPost]
+        public IActionResult GetAll(UserPaging pagging)
         {
-            Paging page = new Paging(PagesNum,ItemsPerPage);
             try
             {
-                Response<List<UserDto>> users = _userManager.GetUsersList(managerID, page);
+                Response<List<UserDto>> users = _userManager.GetUsersList(pagging);
                 if (users.ErrorCode == 0) return Ok(users);
                 else return BadRequest(users);
             }

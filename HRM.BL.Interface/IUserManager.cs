@@ -7,7 +7,7 @@ namespace HRM.BL.Interface
     {
         public Task<Response<UserDto>> Create(CreateUserDto user);
         public Response<UserDto> GetByID(Guid id);
-        public Response<List<UserDto>> GetUsersList(Guid managerId,[FromQuery] Paging @param);
+        public Response<List<UserDto>> GetUsersList(UserPaging page);
         public Task<Response<UserDto>> Update(UserDto user);
         public Task<Response<bool>> Delete(Guid id);
         public Response<bool> Login(LoginDto loginDto);

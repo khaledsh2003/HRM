@@ -20,4 +20,9 @@ namespace HRM.Models
          Approved=2,
          Rejected=3
     }
+    public enum UserType
+    {
+        user=0,
+        manager=1,
+    }
 }

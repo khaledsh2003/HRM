@@ -20,10 +20,9 @@ namespace HRM.BL.Managers
         }
         public async Task<Response<VacationDto>> Create(VacationDto vacation)
         {
-            var newVacation=VacationEnumsMapper.Map(vacation);
             try
             {
-                var vacationToCreate = new VacationEntity() { Type = newVacation.Type, StartingDate = vacation.StartingDate, Duration = vacation.Duration, Status = vacation.Status, Note = vacation.Note, UserId = vacation.UserId, CreationDate = DateTime.Now };
+                var vacationToCreate = new VacationEntity() { Type = (int)vacation.Type, StartingDate = vacation.StartingDate, Duration = vacation.Duration, Status = (int)vacation.Status, Note = vacation.Note, UserId = vacation.UserId, CreationDate = DateTime.Now };
                 _hrmContext.Vacations.Add(vacationToCreate);
                 await _hrmContext.SaveChangesAsync();
                 return new Response<VacationDto>(_vacationEntityMapper.Map(vacationToCreate));
@@ -61,10 +60,10 @@ namespace HRM.BL.Managers
                     return new Response<VacationDto>(ErrorCodes.UserNotFound, "User Not Found ");
                 }
                 var vacationToUpdate = _hrmContext.Vacations.FirstOrDefault(x => x.ID == vacation.ID);
-                if (vacation.Type > 0 && vacation.Type <= 3) vacationToUpdate.Type = vacation.Type;
+                if ((int)vacation.Type > 0 && (int)vacation.Type <= 3) vacationToUpdate.Type = (int)vacation.Type;
                 if (!string.IsNullOrEmpty(vacation.StartingDate.ToString())) vacationToUpdate.StartingDate = vacation.StartingDate;
                 if (vacation.Duration > 0) vacationToUpdate.Duration = vacation.Duration;
-                if (vacation.Status >= 0 && vacation.Status <= 3) vacationToUpdate.Status = vacation.Status;
+                if (vacation.Status >= 0 && (int)vacation.Status <= 3) vacationToUpdate.Status = (int)vacation.Status;
                 if (!string.IsNullOrEmpty(vacation.Note)) vacationToUpdate.Note = vacation.Note;
                 await _hrmContext.SaveChangesAsync();
                 return new Response<VacationDto>(_vacationEntityMapper.Map(vacationToUpdate));

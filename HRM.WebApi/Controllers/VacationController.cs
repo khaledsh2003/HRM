@@ -35,7 +35,7 @@ namespace Controllers
                 return BadRequest(new Response<bool>(ErrorCodes.Unexpected, "Unexpected error in VacationController - Create"));
             }
         }
-        [HttpGet]
+        [HttpPost]
         public IActionResult GetAll(Paging page)
         {
             try

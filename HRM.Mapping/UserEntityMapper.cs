@@ -11,12 +11,16 @@ namespace HRM.Mapping
             {
                 ID = user.ID,
                 Name = user.Name,
-                Type = user.Type,
+                Type = (UserType)user.Type,
                 MobileNumber = user.MobileNumber,
                 Email = user.Email,
                 JobTitle = user.JobTitle,
                 Manager = new ManagerDto()
             };
+            if (manager == null)
+            {
+                return temp;
+            }
             if (user.ManagerID != null || user.ManagerID != Guid.Empty)
             {
                 temp.Manager = new ManagerDto();
@@ -26,8 +30,10 @@ namespace HRM.Mapping
                 temp.Manager.MobileNumber = manager.MobileNumber;
                 temp.Manager.Email = manager.Email;
                 temp.Manager.JobTitle = manager.JobTitle;    
+                temp.Manager.ManagerID = manager.ManagerID;
             }
             return temp;
         }
+      
     }
 }

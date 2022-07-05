@@ -15,10 +15,10 @@ namespace HRM.Mapping
             var temp = new VacationDto
             {
                 ID = user.ID,
-                Type = user.Type,
+                Type = (VacationTypes)user.Type,
                 StartingDate=user.StartingDate,
                 Duration=user.Duration,
-                Status=user.Status,
+                Status=(VacationStatus)user.Status,
                 Note=user.Note,
                 UserId=user.UserId,
             };
