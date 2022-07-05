@@ -1,0 +1,505 @@
+[2022-07-05 09:44:14.527 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 09:44:15.180 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 09:44:15.180 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 09:44:15.185 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 09:44:15.185 +03:00  INF]  Hosting environment: Development
+[2022-07-05 09:44:15.185 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 09:44:16.880 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 09:44:17.492 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 621.8882ms
+[2022-07-05 09:44:17.518 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 09:44:17.527 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 8.5284ms
+[2022-07-05 09:44:17.545 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 09:44:17.595 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 50.0899ms
+[2022-07-05 09:44:18.038 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 09:44:18.266 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 227.9772ms
+[2022-07-05 09:45:25.640 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:45:25.653 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:45:25.718 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:45:27.545 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:45:27.832 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:45:27.832 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:45:28.865 +03:00  INF]  Executed DbCommand (80ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+WHERE [t].[ManagerID] = @__managerID_2
+[2022-07-05 09:45:47.145 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:45:47.176 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 21449.1207ms
+[2022-07-05 09:45:47.177 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:45:47.185 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 21545.7811ms
+[2022-07-05 09:45:58.805 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:45:58.816 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:45:58.817 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:45:58.824 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:45:58.853 +03:00  INF]  Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+WHERE [t].[ManagerID] = @__managerID_2
+[2022-07-05 09:46:38.722 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:46:38.776 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 39958.4085ms
+[2022-07-05 09:46:38.776 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:46:38.776 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 39971.7038ms
+[2022-07-05 09:46:59.496 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 09:46:59.937 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 09:46:59.938 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 09:46:59.942 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 09:46:59.943 +03:00  INF]  Hosting environment: Development
+[2022-07-05 09:46:59.943 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 09:47:01.054 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 09:47:01.458 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 408.7004ms
+[2022-07-05 09:47:01.506 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 09:47:01.518 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 09:47:01.627 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 110.6085ms
+[2022-07-05 09:47:01.629 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 122.3919ms
+[2022-07-05 09:47:01.724 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 09:47:01.945 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 220.4588ms
+[2022-07-05 09:48:02.383 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:48:02.397 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:48:02.441 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:48:03.799 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:48:04.016 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:48:04.016 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:48:04.651 +03:00  INF]  Executed DbCommand (58ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+WHERE [t].[ManagerID] = @__managerID_2
+[2022-07-05 09:48:04.678 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:48:04.699 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 2247.5103ms
+[2022-07-05 09:48:04.699 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:48:04.706 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 2328.5946ms
+[2022-07-05 09:48:08.993 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:48:09.005 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:48:09.005 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:48:09.008 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:48:09.024 +03:00  INF]  Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+WHERE [t].[ManagerID] = @__managerID_2
+[2022-07-05 09:48:09.025 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:48:09.026 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 20.4639ms
+[2022-07-05 09:48:09.026 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:48:09.027 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 34.3469ms
+[2022-07-05 09:48:35.656 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:48:35.657 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:48:35.658 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:49:07.514 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:53:11.961 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 09:53:12.467 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 09:53:12.467 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 09:53:12.478 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 09:53:12.478 +03:00  INF]  Hosting environment: Development
+[2022-07-05 09:53:12.478 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 09:53:13.944 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 09:53:14.661 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 728.0307ms
+[2022-07-05 09:53:14.796 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 09:53:14.801 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 4.7395ms
+[2022-07-05 09:53:14.802 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 09:53:14.856 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 54.1930ms
+[2022-07-05 09:53:14.976 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 09:53:15.220 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 243.9263ms
+[2022-07-05 09:53:31.296 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:53:31.312 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:53:31.347 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:57:22.808 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 09:57:23.244 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 09:57:23.245 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 09:57:23.280 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 09:57:23.281 +03:00  INF]  Hosting environment: Development
+[2022-07-05 09:57:23.281 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 09:57:24.216 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 09:57:24.652 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 440.7453ms
+[2022-07-05 09:57:24.690 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 09:57:24.690 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 09:57:24.695 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 4.8789ms
+[2022-07-05 09:57:24.825 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 135.4224ms
+[2022-07-05 09:57:24.898 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 09:57:25.125 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 227.7262ms
+[2022-07-05 09:57:34.382 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:57:34.408 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:57:34.459 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:57:55.026 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:57:57.418 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:57:57.972 +03:00  INF]  Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS
+[2022-07-05 09:58:41.984 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 09:58:42.431 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 09:58:42.432 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 09:58:42.437 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 09:58:42.438 +03:00  INF]  Hosting environment: Development
+[2022-07-05 09:58:42.439 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 09:58:43.427 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 09:58:43.885 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 463.7329ms
+[2022-07-05 09:58:43.948 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 09:58:43.948 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 09:58:43.952 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 4.4300ms
+[2022-07-05 09:58:43.994 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 45.7356ms
+[2022-07-05 09:58:44.193 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 09:58:44.416 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 226.1662ms
+[2022-07-05 09:58:51.499 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 09:58:51.513 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:58:51.600 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:58:53.484 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:58:53.743 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:58:53.745 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:58:54.440 +03:00  INF]  Executed DbCommand (68ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2022-07-05 09:58:54.610 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:58:54.624 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:58:54.634 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:58:54.661 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 3050.2618ms
+[2022-07-05 09:58:54.661 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:58:54.668 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 3168.9130ms
+[2022-07-05 09:59:12.729 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=3 - -
+[2022-07-05 09:59:12.734 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:12.736 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:59:12.741 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:59:12.757 +03:00  INF]  Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2022-07-05 09:59:12.764 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:12.770 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:12.772 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:12.773 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:12.776 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:12.777 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:12.778 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:59:12.778 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 42.457ms
+[2022-07-05 09:59:12.778 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:12.779 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=3 - - - 200 - application/json;+charset=utf-8 49.4299ms
+[2022-07-05 09:59:22.091 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=2&ItemsPerPage=3 - -
+[2022-07-05 09:59:22.092 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:22.092 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:59:22.203 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:59:22.206 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:59:22.206 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 09:59:22.216 +03:00  INF]  Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+[2022-07-05 09:59:22.218 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:22.220 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:22.220 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:59:22.221 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 128.5176ms
+[2022-07-05 09:59:22.221 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:22.221 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=2&ItemsPerPage=3 - - - 200 - application/json;+charset=utf-8 129.3782ms
+[2022-07-05 09:59:30.560 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=2 - -
+[2022-07-05 09:59:30.561 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:30.561 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:59:30.562 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:59:30.607 +03:00  INF]  Executed DbCommand (44ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+[2022-07-05 09:59:30.611 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:30.617 +03:00  INF]  Executed DbCommand (6ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:30.619 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:30.621 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:30.622 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:59:30.622 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 61.381ms
+[2022-07-05 09:59:30.623 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:30.623 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=2 - - - 200 - application/json;+charset=utf-8 62.7897ms
+[2022-07-05 09:59:39.302 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=2&ItemsPerPage=2 - -
+[2022-07-05 09:59:39.303 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:39.303 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 09:59:39.304 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 09:59:39.326 +03:00  INF]  Executed DbCommand (22ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+[2022-07-05 09:59:39.340 +03:00  INF]  Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:39.349 +03:00  INF]  Executed DbCommand (8ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:39.357 +03:00  INF]  Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 09:59:39.358 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 09:59:39.359 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 09:59:39.359 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 56.0575ms
+[2022-07-05 09:59:39.359 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 09:59:39.359 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=2&ItemsPerPage=2 - - - 200 - application/json;+charset=utf-8 56.6898ms
+[2022-07-05 10:01:12.370 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 10:01:12.832 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 10:01:12.833 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 10:01:12.839 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 10:01:12.839 +03:00  INF]  Hosting environment: Development
+[2022-07-05 10:01:12.840 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 10:01:15.408 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 10:01:16.336 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 10:01:16.351 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 13.3029ms
+[2022-07-05 10:01:16.632 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 10:01:16.695 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 1294.8384ms
+[2022-07-05 10:01:17.137 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 504.8860ms
+[2022-07-05 10:01:17.352 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 10:01:17.741 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 388.9066ms
+[2022-07-05 10:01:25.920 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 10:01:25.939 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:01:26.093 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 10:01:27.904 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 10:01:28.176 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:01:28.177 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:01:29.065 +03:00  INF]  Executed DbCommand (57ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__managerID_2='?' (DbType = Guid), @__managerID_3='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+WHERE ([t].[ManagerID] = @__managerID_2) AND ([t].[ID] <> @__managerID_3)
+[2022-07-05 10:01:29.103 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 10:01:29.129 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 3021.7077ms
+[2022-07-05 10:01:29.130 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:01:29.142 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 3221.9140ms
+[2022-07-05 10:04:01.442 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 10:04:02.020 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 10:04:02.021 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 10:04:02.025 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 10:04:02.026 +03:00  INF]  Hosting environment: Development
+[2022-07-05 10:04:02.026 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 10:04:03.448 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 10:04:04.619 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 1176.3765ms
+[2022-07-05 10:04:04.643 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 10:04:04.646 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 10:04:05.035 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 388.7251ms
+[2022-07-05 10:04:05.198 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 555.7002ms
+[2022-07-05 10:04:05.312 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 10:04:06.001 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 688.9880ms
+[2022-07-05 10:04:25.168 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 10:04:25.196 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:04:25.251 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 10:04:28.000 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 10:04:28.413 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:04:28.480 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:04:29.784 +03:00  INF]  Executed DbCommand (87ms) [Parameters=[@__p_3='?' (DbType = Int32), @__p_0='?' (DbType = Int32), @__managerID_1='?' (DbType = Guid), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_3) [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS
+) AS [t]
+WHERE ([t].[ManagerID] = @__managerID_1) AND ([t].[ID] <> @__managerID_2)
+[2022-07-05 10:04:29.970 +03:00  INF]  Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 10:04:29.982 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 10:04:30.000 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 10:04:30.029 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 4767.861ms
+[2022-07-05 10:04:30.030 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:04:30.037 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 4868.7342ms
+[2022-07-05 10:04:42.861 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=2 - -
+[2022-07-05 10:04:42.871 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:04:42.872 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 10:04:42.877 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 10:04:42.894 +03:00  INF]  Executed DbCommand (12ms) [Parameters=[@__p_3='?' (DbType = Int32), @__p_0='?' (DbType = Int32), @__managerID_1='?' (DbType = Guid), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_3) [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS
+) AS [t]
+WHERE ([t].[ManagerID] = @__managerID_1) AND ([t].[ID] <> @__managerID_2)
+[2022-07-05 10:04:42.896 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 10:04:42.899 +03:00  INF]  Executed DbCommand (2ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 10:04:42.900 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 10:04:42.901 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 10:04:42.903 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 10:04:42.904 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 31.0156ms
+[2022-07-05 10:04:42.904 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:04:42.905 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=1&ItemsPerPage=2 - - - 200 - application/json;+charset=utf-8 43.8956ms
+[2022-07-05 10:04:54.427 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=2&ItemsPerPage=2 - -
+[2022-07-05 10:04:54.428 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:04:54.428 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 10:04:54.519 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 10:04:54.522 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:04:54.523 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:04:54.537 +03:00  INF]  Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__managerID_1='?' (DbType = Guid), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS
+) AS [t]
+WHERE ([t].[ManagerID] = @__managerID_1) AND ([t].[ID] <> @__managerID_2)
+[2022-07-05 10:04:54.541 +03:00  INF]  Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 10:04:54.543 +03:00  INF]  Executed DbCommand (1ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 10:04:54.544 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 10:04:54.545 +03:00  INF]  Executed DbCommand (0ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 10:04:54.545 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 10:04:54.546 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 117.7451ms
+[2022-07-05 10:04:54.546 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:04:54.546 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=a1c70103-1446-4157-837f-08da5dc9a791&PagesNum=2&ItemsPerPage=2 - - - 200 - application/json;+charset=utf-8 118.6658ms
+[2022-07-05 10:05:55.827 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 10:05:56.244 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 10:05:56.245 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 10:05:56.249 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 10:05:56.250 +03:00  INF]  Hosting environment: Development
+[2022-07-05 10:05:56.250 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 10:05:57.648 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 10:05:58.366 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 10:05:58.367 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 725.8136ms
+[2022-07-05 10:05:58.429 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 10:05:58.581 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 214.4729ms
+[2022-07-05 10:05:58.611 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 181.7789ms
+[2022-07-05 10:05:58.866 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 10:05:59.275 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 409.0123ms
+[2022-07-05 10:06:06.384 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=c1686a97-1b1a-4c5b-8380-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 10:06:06.398 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:06:06.449 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 10:06:08.693 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 10:06:09.011 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:06:09.111 +03:00  WRN]  The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2022-07-05 10:06:09.948 +03:00  INF]  Executed DbCommand (105ms) [Parameters=[@__p_3='?' (DbType = Int32), @__p_0='?' (DbType = Int32), @__managerID_1='?' (DbType = Guid), @__managerID_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_3) [t].[ID], [t].[CreationDate], [t].[Email], [t].[JobTitle], [t].[ManagerID], [t].[MobileNumber], [t].[Name], [t].[Password], [t].[Type]
+FROM (
+    SELECT [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS
+) AS [t]
+WHERE ([t].[ManagerID] = @__managerID_1) AND ([t].[ID] <> @__managerID_2)
+[2022-07-05 10:06:09.999 +03:00  INF]  Executing OkObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 10:06:10.021 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 3562.3127ms
+[2022-07-05 10:06:10.022 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:06:10.026 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=c1686a97-1b1a-4c5b-8380-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 200 - application/json;+charset=utf-8 3642.2091ms
+[2022-07-05 10:12:14.080 +03:00  INF]  User profile is available. Using 'C:\Users\kshah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[2022-07-05 10:12:14.471 +03:00  INF]  Now listening on: https://localhost:7266
+[2022-07-05 10:12:14.472 +03:00  INF]  Now listening on: http://localhost:5266
+[2022-07-05 10:12:14.478 +03:00  INF]  Application started. Press Ctrl+C to shut down.
+[2022-07-05 10:12:14.479 +03:00  INF]  Hosting environment: Development
+[2022-07-05 10:12:14.479 +03:00  INF]  Content root path: C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\
+[2022-07-05 10:12:15.973 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/index.html - -
+[2022-07-05 10:12:17.369 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/index.html - - - 200 - text/html;charset=utf-8 1406.2530ms
+[2022-07-05 10:12:17.428 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - -
+[2022-07-05 10:12:17.520 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/_vs/browserLink - -
+[2022-07-05 10:12:17.523 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_framework/aspnetcore-browser-refresh.js - - - 200 11956 application/javascript;+charset=utf-8 95.1760ms
+[2022-07-05 10:12:17.654 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 215.0295ms
+[2022-07-05 10:12:17.887 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - -
+[2022-07-05 10:12:18.290 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 403.6290ms
+[2022-07-05 10:12:26.654 +03:00  INF]  Request starting HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=c1686a97-1b1a-4c5b-8380-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - -
+[2022-07-05 10:12:26.695 +03:00  INF]  Executing endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:12:26.758 +03:00  INF]  Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(System.Guid, Int32, Int32) on controller Controllers.UserController (HRM.WebApi).
+[2022-07-05 10:12:28.773 +03:00  INF]  Entity Framework Core 6.0.6 initialized 'HrmContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+[2022-07-05 10:12:29.923 +03:00  INF]  Executed DbCommand (64ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE [u].[ID] = @__id_0
+[2022-07-05 10:12:30.105 +03:00  INF]  Executed DbCommand (19ms) [Parameters=[@__managerID_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[ID], [u].[CreationDate], [u].[Email], [u].[JobTitle], [u].[ManagerID], [u].[MobileNumber], [u].[Name], [u].[Password], [u].[Type]
+FROM [Users] AS [u]
+WHERE ([u].[ID] = @__managerID_0) AND ([u].[Type] = CAST(1 AS bit))
+[2022-07-05 10:12:30.122 +03:00  INF]  Executing BadRequestObjectResult, writing value of type 'HRM.Models.Response`1[[System.Collections.Generic.List`1[[HRM.Models.UserDto, HRM.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[2022-07-05 10:12:30.150 +03:00  INF]  Executed action Controllers.UserController.GetAll (HRM.WebApi) in 3380.3159ms
+[2022-07-05 10:12:30.150 +03:00  INF]  Executed endpoint 'Controllers.UserController.GetAll (HRM.WebApi)'
+[2022-07-05 10:12:30.155 +03:00  INF]  Request finished HTTP/2 GET https://localhost:7266/api/User/GetAll?managerID=c1686a97-1b1a-4c5b-8380-08da5dc9a791&PagesNum=1&ItemsPerPage=1 - - - 400 - application/json;+charset=utf-8 3501.7312ms

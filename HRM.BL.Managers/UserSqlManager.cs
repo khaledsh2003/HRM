@@ -71,16 +71,19 @@ namespace HRM.BL.Managers
         
         public Response<List<UserDto>> GetUsersList(Guid managerID,Paging page)
         {
-
             List<UserDto> _users = new List<UserDto>();
             try
             {
-                var choosenUser = _hrmContext.Users.Skip((page.Page - 1)* page.ItemsPerPage).Take(page.ItemsPerPage).Where(x=>x.ManagerID==managerID).ToList();
-                foreach (var i in choosenUser)
+                if (FindManagerByID(managerID).Data != null)
                 {
-                    _users.Add(_userEntityMapper.Map(i, FindManagerByID(managerID).Data));
+                    var choosenUser = _hrmContext.Users.Skip((page.Page - 1) * page.ItemsPerPage).Where(x => x.ManagerID == managerID && x.ID != managerID).Take(page.ItemsPerPage).ToList();
+                    foreach (var i in choosenUser)
+                    {
+                        _users.Add(_userEntityMapper.Map(i, FindManagerByID(managerID).Data));
+                    }
+                    return new Response<List<UserDto>>(_users);
                 }
-                return new Response<List<UserDto>>(_users);
+                return new Response<List<UserDto>>(ErrorCodes.UserNotFound,"Enter an ID of a manager not a user");
             }
             catch (Exception ex)
             {
