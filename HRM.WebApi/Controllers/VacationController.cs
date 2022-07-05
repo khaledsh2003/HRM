@@ -22,7 +22,7 @@ namespace Controllers
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] VacationDto vacation)
-        {
+        {                                               
             try
             {
                 Response<VacationDto> newVacation = await _vacationManager.Create(vacation);

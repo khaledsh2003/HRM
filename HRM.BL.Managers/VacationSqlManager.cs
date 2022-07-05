@@ -3,29 +3,34 @@ using HRM.DAL.EF;
 using HRM.Mapping;
 using HRM.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace HRM.BL.Managers
 {
     public class VacationSqlManager : IVacationManager
     {
         private readonly HrmContext _hrmContext;
+        private readonly ILogger<VacationSqlManager> _logger;
         private VacationEntityMapper _vacationEntityMapper;
-        public VacationSqlManager(HrmContext hrmContext)
+        public VacationSqlManager(HrmContext hrmContext,ILogger<VacationSqlManager> logger)
         {
             _hrmContext = hrmContext;
+            _logger = logger;
             _vacationEntityMapper = new VacationEntityMapper();
         }
         public async Task<Response<VacationDto>> Create(VacationDto vacation)
         {
+            var newVacation=VacationEnumsMapper.Map(vacation);
             try
             {
-                var vacationToCreate = new VacationEntity() { Type = vacation.Type, StartingDate = vacation.StartingDate, Duration = vacation.Duration, Status = vacation.Status, Note = vacation.Note, UserId = vacation.UserId, CreationDate = DateTime.Now };
+                var vacationToCreate = new VacationEntity() { Type = newVacation.Type, StartingDate = vacation.StartingDate, Duration = vacation.Duration, Status = vacation.Status, Note = vacation.Note, UserId = vacation.UserId, CreationDate = DateTime.Now };
                 _hrmContext.Vacations.Add(vacationToCreate);
                 await _hrmContext.SaveChangesAsync();
                 return new Response<VacationDto>(_vacationEntityMapper.Map(vacationToCreate));
             }
             catch (Exception ex)
             {
+                _logger.LogCritical("VacationManager - Create ", ex);
                 return new Response<VacationDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
@@ -43,6 +48,7 @@ namespace HRM.BL.Managers
             }
             catch (Exception ex)
             {
+                _logger.LogCritical("VacationManager - GetVacationList ", ex);
                 return new Response<List<VacationDto>>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
@@ -65,6 +71,7 @@ namespace HRM.BL.Managers
             }
             catch (Exception ex)
             {
+                _logger.LogCritical("VacationManager - Update ", ex);
                 return new Response<VacationDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
@@ -83,6 +90,7 @@ namespace HRM.BL.Managers
             }
             catch (Exception ex)
             {
+                _logger.LogCritical("VacationManager - Delete ", ex);
                 return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }

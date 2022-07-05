@@ -15,7 +15,7 @@ namespace HRM.DAL.EF
         public Guid ID {get;set;}
         [MaxLength(50)]
         public string Name { get;set;}
-        public bool Type { get; set; }
+        public int Type { get; set; }
         [MaxLength(70)]
         public string MobileNumber { get; set; }
         [MaxLength(100)]
@@ -25,6 +25,9 @@ namespace HRM.DAL.EF
         [MaxLength(70)]
         public string JobTitle { get; set; }
         public Guid? ManagerID { get; set; }
+
+        public virtual UserEntity  Manager { get; set; }
+
         public DateTime CreationDate { get; set; }
     }
 }

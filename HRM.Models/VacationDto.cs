@@ -16,4 +16,5 @@ namespace HRM.Models
         public string Note { get; set; }
         public Guid UserId { get; set; }
     }
+   
 }

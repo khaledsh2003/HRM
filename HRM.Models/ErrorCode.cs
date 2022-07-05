@@ -12,6 +12,5 @@ namespace HRM.Models
         UserNotFound = 1110,
         WrongPassOrUser=10,
         Unexpected = 44444,
-
     }
 }
