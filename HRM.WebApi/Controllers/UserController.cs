@@ -10,6 +10,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Utilities;
+using Utilities.MvcApplication.HowTo.Attributes;
 
 namespace Controllers
 {
@@ -27,7 +29,7 @@ namespace Controllers
             _configuration = configuration;
         }
         [HttpPost]
-        [Authorize(Roles = "manager")]
+        [AuthorizeEnum(UserType.manager)]
         public async Task<IActionResult> Create(CreateUserDto createUserDto)
         {
             try 
@@ -43,7 +45,8 @@ namespace Controllers
             }
         }
         [HttpGet]
-        [Authorize(Roles = "manager")]
+        // [Authorize(nameof(UserType.manager)]
+        [AuthorizeEnum(UserType.manager)]
         public IActionResult Get(Guid id)
         {
             try
@@ -60,7 +63,7 @@ namespace Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "manager")]
+        [AuthorizeEnum(UserType.manager)]
         public IActionResult GetAll(UserPaging pagging)
         {
             try
@@ -76,7 +79,7 @@ namespace Controllers
             }
         }
         [HttpGet]
-        [Authorize(Roles = "manager")]
+        [AuthorizeEnum(UserType.manager)]
         public async Task<IActionResult> Remove(Guid id)
         {
             try
@@ -168,7 +171,7 @@ namespace Controllers
             }
         }
         [HttpPut]
-        [Authorize(Roles = "manager")]
+        [AuthorizeEnum(UserType.manager)]
         public async Task<IActionResult> Update(UserDto user)
         {
             try
@@ -182,23 +185,6 @@ namespace Controllers
                 _logger.LogCritical("UserController - Update", ex);
                 return BadRequest(new Response<UserDto>(ErrorCodes.Unexpected, "Un expected error in update - userControler"));
             }
-        }
-        private UserDto GetCurrentUser()
-        {
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-
-            if (identity != null)
-            {
-                var userClaims = identity.Claims;
-
-                return new UserDto
-                {
-                    ID = Guid.Parse(userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Name)?.Value),
-                    Type =(UserType) int.Parse(userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value)
-                };
-            }
-         
-            return null;
         }
 
     }
