@@ -291,3 +291,6 @@ C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\HRM.BL.
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\HRM.Mapping.pdb
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\HRM.Models.pdb
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Utilities.pdb
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\obj\Debug\net6.0\HRM.WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll

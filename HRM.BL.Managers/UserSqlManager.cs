@@ -27,7 +27,7 @@ namespace HRM.BL.Managers
             {
                 string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
                 var userToCreate = new UserEntity() { Name = user.Name, Type = (int)user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.Manager.ID,CreationDate = DateTime.Now };
-                _hrmContext.Users.Add(userToCreate);
+                _hrmContext.Users.Add(userToCreate); 
                 await _hrmContext.SaveChangesAsync();
                 //find manager and add it
                 var userEntity = _hrmContext.Users.FirstOrDefault(u => u.ID == userToCreate.ManagerID && u.Type==(int)UserType.manager);
