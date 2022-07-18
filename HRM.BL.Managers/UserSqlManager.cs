@@ -9,13 +9,13 @@ using System.Security.Cryptography;
 
 namespace HRM.BL.Managers
 {
-    public class UserSqlManager : IUserManager 
+    public class UserSqlManager : IUserManager
     {
         private readonly HrmContext _hrmContext;
         private readonly ILogger<UserSqlManager> _logger;
         private UserEntityMapper _userEntityMapper;
         private PasswordHash _hashPassword;
-        public UserSqlManager(HrmContext hrmContext,ILogger<UserSqlManager> logger)
+        public UserSqlManager(HrmContext hrmContext, ILogger<UserSqlManager> logger)
         {
             _hrmContext = hrmContext;
             _userEntityMapper = new UserEntityMapper();

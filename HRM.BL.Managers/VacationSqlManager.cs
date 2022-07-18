@@ -18,11 +18,11 @@ namespace HRM.BL.Managers
             _logger = logger;
             _vacationEntityMapper = new VacationEntityMapper();
         }
-        public async Task<Response<VacationDto>> Create(VacationDto vacation)
+        public async Task<Response<VacationDto>> Create(Guid userId,CreateVacationDto vacation)
         {
             try
             {
-                var vacationToCreate = new VacationEntity() { Type = (int)vacation.Type, StartingDate = vacation.StartingDate, Duration = vacation.Duration, Status = (int)vacation.Status, Note = vacation.Note, UserId = vacation.UserId, CreationDate = DateTime.Now };
+                var vacationToCreate = new VacationEntity() { Type = (int)vacation.Type, StartingDate = vacation.StartingDate, Duration = vacation.Duration, Status = (int)vacation.Status, Note = null, UserId = userId, CreationDate = DateTime.Now };
                 _hrmContext.Vacations.Add(vacationToCreate);
                 await _hrmContext.SaveChangesAsync();
                 return new Response<VacationDto>(_vacationEntityMapper.Map(vacationToCreate));
@@ -51,11 +51,12 @@ namespace HRM.BL.Managers
                 return new Response<List<VacationDto>>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public async Task<Response<VacationDto>> Update(VacationDto vacation)
+        public async Task<Response<VacationDto>> Update(UpdateVacationDto vacation)
         {
             try
-            {
-                if (IsVacationAval(vacation.ID))
+            {//fix here
+
+                if (!IsVacationAval(vacation.ID))
                 {
                     return new Response<VacationDto>(ErrorCodes.UserNotFound, "User Not Found ");
                 }

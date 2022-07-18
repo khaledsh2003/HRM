@@ -10,9 +10,9 @@ namespace HRM.BL.Interface
 {
     public interface IVacationManager
     {
-        public Task<Response<VacationDto>> Create(VacationDto vacation);
+        public Task<Response<VacationDto>> Create(Guid userId,CreateVacationDto vacation);
         public Response<List<VacationDto>> GetVacationList([FromQuery] Paging @param);
-        public Task<Response<VacationDto>> Update(VacationDto vacation);
+        public Task<Response<VacationDto>> Update(UpdateVacationDto vacation);
         public Task<Response<bool>> Delete(Guid id);
     }
 }

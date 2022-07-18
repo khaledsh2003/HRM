@@ -7,23 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-
-namespace Utilities
+namespace MvcApplication.HowTo.Attributes
 {
-    using Microsoft.AspNetCore.Mvc.Filters;
-    using System;
-    using System.Linq;
-    using System.Web.Http.Controllers;
-    using System.Web.Mvc;
-
-
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
     public class AuthorizeEnumAttribute : AuthorizeAttribute
     {
         public AuthorizeEnumAttribute(UserType usertype)
         {
-            Roles = UserType.manager.ToString();
+            this.Roles = UserType.manager.ToString();
         }
+
     }
 }
-           
+

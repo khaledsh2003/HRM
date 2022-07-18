@@ -3,6 +3,7 @@ using HRM.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using MvcApplication.HowTo.Attributes;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace Controllers
         [HttpPost]
         [AuthorizeEnum(UserType.manager)]
         public async Task<IActionResult> Create(CreateUserDto createUserDto)
-        {//user -> session -> then get session
+        {
             try 
             {
                 var managerID=Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
@@ -67,7 +68,7 @@ namespace Controllers
 
         [HttpPost]
         //[Authorize(Roles=nameof(UserType.manager))]
-                [AuthorizeEnum(UserType.manager)]
+        [AuthorizeEnum(UserType.manager)]
 
         public IActionResult GetAll(UserPaging pagging)
         {
@@ -109,8 +110,8 @@ namespace Controllers
                 if (user!=null)
                 {
                     var token = Generate(user);
-                    HttpContext.Session.SetString($"{user.ID}_user",JsonConvert.SerializeObject(user));
-                    HttpContext.Session.SetString($"{user.ID}_token",token);
+                        HttpContext.Session.SetString($"{user.ID}_user",JsonConvert.SerializeObject(user));
+                        HttpContext.Session.SetString($"{user.ID}_token",token);
                     return Ok(token);
                 }
                 return NotFound("User not found");

@@ -15,9 +15,9 @@ namespace HRM.DAL.EF
         public Guid ID { get; set; }
         public int Type { get; set; }
         [Column(TypeName = "Date")]
-        public DateTime StartingDate { get; set; }
-        public int Duration { get; set; }
-        public int Status { get; set; }
+        public DateTime? StartingDate { get; set; }
+        public int? Duration { get; set; }
+        public int? Status { get; set; }
         public string? Note { get; set; }
 
         [ForeignKey("User")]

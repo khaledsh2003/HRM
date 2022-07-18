@@ -1,9 +1,11 @@
 ﻿using HRM.BL.Interface;
 using HRM.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,11 +23,12 @@ namespace Controllers
             _logger = logger;
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] VacationDto vacation)
+        public async Task<IActionResult> Create([FromBody] CreateVacationDto vacation)
         {                                               
             try
             {
-                Response<VacationDto> newVacation = await _vacationManager.Create(vacation);
+                var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                Response<VacationDto> newVacation = await _vacationManager.Create(userId,vacation);
                 if (newVacation.ErrorCode == 0) return Ok(newVacation); 
                 else return BadRequest(newVacation);
             }
@@ -66,7 +69,7 @@ namespace Controllers
             }
         }
         [HttpPut]
-        public async Task<IActionResult> Update(VacationDto vacationDto)
+        public async Task<IActionResult> Update(UpdateVacationDto vacationDto)
         {
             try
             {
