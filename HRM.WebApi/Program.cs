@@ -30,6 +30,7 @@ builder.Services.AddControllers();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddMvc();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddTransient<IUserManager, UserSqlManager>();
 builder.Services.AddTransient<IVacationManager, VacationSqlManager>();
 builder.Services.AddDbContext<HrmContext>(options =>

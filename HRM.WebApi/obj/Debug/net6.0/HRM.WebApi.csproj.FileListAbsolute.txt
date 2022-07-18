@@ -294,3 +294,13 @@ C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Utiliti
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\obj\Debug\net6.0\HRM.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Microsoft.Extensions.Configuration.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

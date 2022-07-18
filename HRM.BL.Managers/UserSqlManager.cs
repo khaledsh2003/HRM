@@ -21,17 +21,30 @@ namespace HRM.BL.Managers
             _userEntityMapper = new UserEntityMapper();
             _logger = logger;
         }
-        public async Task<Response<UserDto>> Create(CreateUserDto user)
+        public Response<UserDto> GetUserByEmail(string email)
+        {
+            var user = _hrmContext.Users.FirstOrDefault(x => x.Email == email);
+            var userEntity = _hrmContext.Users.FirstOrDefault(u => u.ID == user.ManagerID && u.Type == (int)UserType.manager);
+            if (user != null) return new Response<UserDto>(_userEntityMapper.Map(user, userEntity));
+            return new Response<UserDto>(ErrorCodes.UserNotFound, "User not found");
+        }
+        public async Task<Response<UserDto>> Create(Guid userType,CreateUserDto user)
         {
             try
             {
-                string hashedPassword = PasswordHash.HashText(user.Password,"khaled", new SHA1CryptoServiceProvider());
-                var userToCreate = new UserEntity() { Name = user.Name, Type = (int)user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = user.Manager.ID,CreationDate = DateTime.Now };
-                _hrmContext.Users.Add(userToCreate); 
-                await _hrmContext.SaveChangesAsync();
-                //find manager and add it
-                var userEntity = _hrmContext.Users.FirstOrDefault(u => u.ID == userToCreate.ManagerID && u.Type==(int)UserType.manager);
-                return new Response<UserDto>(_userEntityMapper.Map(userToCreate, userEntity));
+                var userEmail=_hrmContext.Users.FirstOrDefault(x => x.Email == user.Email);
+                if (userEmail == null)
+                {
+
+                    string hashedPassword = PasswordHash.HashText(user.Password, "khaled", new SHA1CryptoServiceProvider());
+                    var userToCreate = new UserEntity() { Name = user.Name, Type = (int)user.Type, MobileNumber = user.MobileNumber, Email = user.Email, Password = hashedPassword, JobTitle = user.JobTitle, ManagerID = userType, CreationDate = DateTime.Now };
+                    _hrmContext.Users.Add(userToCreate);
+                    await _hrmContext.SaveChangesAsync();
+                    //find manager and add it
+                    var userEntity = _hrmContext.Users.FirstOrDefault(u => u.ID == userToCreate.ManagerID && u.Type == (int)UserType.manager);
+                    return new Response<UserDto>(_userEntityMapper.Map(userToCreate, userEntity));
+                }
+                return new Response<UserDto>(ErrorCodes.UserAlreadyFound, "User Exits"); 
             }
             catch (Exception ex)
             {
@@ -128,11 +141,12 @@ namespace HRM.BL.Managers
         {
             try
             {
-                if (IsUserAval(resetPasswordDto.UserName))
+                var isUserFound = _hrmContext.Users.FirstOrDefault(x => x.Email == resetPasswordDto.UserName);
+                if(isUserFound != null)
                 {
                     string hashedNewPassword = PasswordHash.HashText(resetPasswordDto.NewPassword, "khaled", new SHA1CryptoServiceProvider());
                     string hashedOldPassword = PasswordHash.HashText(resetPasswordDto.OldPassword, "khaled", new SHA1CryptoServiceProvider());
-                    var user = _hrmContext.Users.FirstOrDefault(x => x.ID == resetPasswordDto.UserName);
+                    var user = _hrmContext.Users.FirstOrDefault(x => x.Email == resetPasswordDto.UserName);
                     if (user.Password == hashedOldPassword)
                     {
                         user.Password = hashedNewPassword;
@@ -154,7 +168,7 @@ namespace HRM.BL.Managers
             try
             {
                 string hashedPassword = PasswordHash.HashText(loginDto.Password, "khaled", new SHA1CryptoServiceProvider());
-                var user = _hrmContext.Users.FirstOrDefault(x => x.ID == loginDto.UserName);
+                var user = _hrmContext.Users.FirstOrDefault(x => x.Email == loginDto.UserName);
                 if (user!=null && user.Password==hashedPassword) return new Response<bool>(true);
                 return new Response<bool>(ErrorCodes.UserNotFound,"User is not found in our record");
             }

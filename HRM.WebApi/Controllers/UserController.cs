@@ -3,6 +3,7 @@ using HRM.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,7 +12,6 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Utilities;
-using Utilities.MvcApplication.HowTo.Attributes;
 
 namespace Controllers
 {
@@ -22,7 +22,7 @@ namespace Controllers
         private readonly IUserManager _userManager;
         private readonly ILogger<UserController> _logger;
         private IConfiguration _configuration;
-        public UserController(IUserManager userManager,ILogger<UserController> logger, IConfiguration configuration)
+        public UserController(IUserManager userManager,ILogger<UserController> logger, IConfiguration configuration, IHttpContextAccessor context)
         {
             _userManager = userManager;
             _logger = logger;
@@ -31,10 +31,13 @@ namespace Controllers
         [HttpPost]
         [AuthorizeEnum(UserType.manager)]
         public async Task<IActionResult> Create(CreateUserDto createUserDto)
-        {
+        {//user -> session -> then get session
             try 
             {
-                Response<UserDto> newUser = await _userManager.Create(createUserDto);
+                var managerID=Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
+                var userString=HttpContext.Session.GetString($"{managerID}_user");
+                var user = JsonConvert.DeserializeObject(userString);
+                Response<UserDto> newUser = await _userManager.Create(managerID, createUserDto);
                 if(newUser.ErrorCode==0) return Ok(newUser);
                 else return BadRequest(newUser);
             }
@@ -63,7 +66,9 @@ namespace Controllers
         }
 
         [HttpPost]
-        [AuthorizeEnum(UserType.manager)]
+        //[Authorize(Roles=nameof(UserType.manager))]
+                [AuthorizeEnum(UserType.manager)]
+
         public IActionResult GetAll(UserPaging pagging)
         {
             try
@@ -103,7 +108,9 @@ namespace Controllers
                 var user = Authenticate(loginDto);
                 if (user!=null)
                 {
-                    var token = Generate(user); 
+                    var token = Generate(user);
+                    HttpContext.Session.SetString($"{user.ID}_user",JsonConvert.SerializeObject(user));
+                    HttpContext.Session.SetString($"{user.ID}_token",token);
                     return Ok(token);
                 }
                 return NotFound("User not found");
@@ -114,7 +121,7 @@ namespace Controllers
                 return BadRequest(new Response<bool>(ErrorCodes.Unexpected, "Un expected error in login - userControler"));
             }
         }
-
+        
         private string Generate(UserDto userDto)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
@@ -122,8 +129,8 @@ namespace Controllers
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, userDto.ID.ToString()),
-                new Claim(ClaimTypes.NameIdentifier, userDto.Name),
+                new Claim(ClaimTypes.NameIdentifier, userDto.ID.ToString()),
+                new Claim(ClaimTypes.Name, userDto.Name),
                 new Claim(ClaimTypes.Role, userDto.Type.ToString()),
                 new Claim(ClaimTypes.MobilePhone, userDto.MobileNumber),
                 new Claim(ClaimTypes.Email, userDto.Email),
@@ -146,7 +153,7 @@ namespace Controllers
             var islogin = _userManager.Login(loginDto);
             if (islogin.ErrorCode == 0)
             {
-                var user = _userManager.GetByID(loginDto.UserName);
+                var user = _userManager.GetUserByEmail(loginDto.UserName);
                 return user.Data;
             }
             return null;

@@ -5,7 +5,8 @@ namespace HRM.BL.Interface
 {
     public interface IUserManager
     {
-        public Task<Response<UserDto>> Create(CreateUserDto user);
+        public Task<Response<UserDto>> Create(Guid userType,CreateUserDto newUser);
+        public Response<UserDto> GetUserByEmail(string email);
         public Response<UserDto> GetByID(Guid id);
         public Response<List<UserDto>> GetUsersList(UserPaging page);
         public Task<Response<UserDto>> Update(UserDto user);
