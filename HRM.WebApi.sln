@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRM.Mapping", "HRM.Mapping\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "HRM.Utilities\Utilities.csproj", "{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Web", "HRM.Web\HRM.Web.csproj", "{ABA711FB-5D6F-4C38-BF99-17887D66C6AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRM.Web", "HRM.Web\HRM.Web.csproj", "{5C4768AF-F2C9-4CB4-89CB-C70E79FF714E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,10 @@ Global
 		{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37AFDC3A-6FD4-45B3-8546-0516981C7CD0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ABA711FB-5D6F-4C38-BF99-17887D66C6AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ABA711FB-5D6F-4C38-BF99-17887D66C6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ABA711FB-5D6F-4C38-BF99-17887D66C6AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ABA711FB-5D6F-4C38-BF99-17887D66C6AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C4768AF-F2C9-4CB4-89CB-C70E79FF714E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C4768AF-F2C9-4CB4-89CB-C70E79FF714E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C4768AF-F2C9-4CB4-89CB-C70E79FF714E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C4768AF-F2C9-4CB4-89CB-C70E79FF714E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
