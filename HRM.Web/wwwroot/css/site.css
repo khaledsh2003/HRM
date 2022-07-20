@@ -17,35 +17,3 @@ body {
   margin-bottom: 60px;
 }
 
-form {
-    margin-left: auto;
-    margin-right: auto;
-    display: table;
-}
-
-p {
-    display: table-row;
-}
-
-label {
-    display: table-cell;
-    padding:10px;
-}
-#rp {
-    display: table-cell;
-    border-radius: 8px;
-    margin:5%;
-    float:right;
-}
-#login {
-    display: table-cell;
-    border-radius: 8px;
-  
-}
-
-
-input {
-    display: table-cell;
-    border-radius:8px;
-    font-size:20pt;
-}

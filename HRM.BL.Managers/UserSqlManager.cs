@@ -163,19 +163,20 @@ namespace HRM.BL.Managers
                 return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }
-        public Response<bool> Login(LoginDto loginDto)
+        public Response<UserDto> Login(LoginDto loginDto)
         {
             try
             {
                 string hashedPassword = PasswordHash.HashText(loginDto.Password, "khaled", new SHA1CryptoServiceProvider());
                 var user = _hrmContext.Users.FirstOrDefault(x => x.Email == loginDto.UserName);
-                if (user!=null && user.Password==hashedPassword) return new Response<bool>(true);
-                return new Response<bool>(ErrorCodes.UserNotFound,"User is not found in our record");
+                var userManager = _hrmContext.Users.FirstOrDefault(u => u.ID == user.ManagerID && u.Type == (int)UserType.manager);
+                if (user!=null && user.Password==hashedPassword) return new Response<UserDto>(_userEntityMapper.Map(user, userManager));
+                return new Response<UserDto>(ErrorCodes.UserNotFound,"User not found");
             }
             catch(Exception ex)
             {
                 _logger.LogCritical("UserManager - Login ", ex);
-                return new Response<bool>(ErrorCodes.Unexpected, "Unexpected Error");
+                return new Response<UserDto>(ErrorCodes.Unexpected, "Unexpected Error");
             }
         }     
     }

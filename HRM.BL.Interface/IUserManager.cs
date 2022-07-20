@@ -11,7 +11,7 @@ namespace HRM.BL.Interface
         public Response<List<UserDto>> GetUsersList(UserPaging page);
         public Task<Response<UserDto>> Update(UserDto user);
         public Task<Response<bool>> Delete(Guid id);
-        public Response<bool> Login(LoginDto loginDto);
+        public Response<UserDto> Login(LoginDto loginDto);
         public Task<Response<bool>> ResetPassword(ResetPasswordDto resetPasswordDto);
 
     }

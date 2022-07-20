@@ -102,24 +102,24 @@ namespace Controllers
         }
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult Login(LoginDto loginDto)
+        public async Task<IActionResult> Login(LoginDto loginDto)
         {
             try
             {
-                var user = Authenticate(loginDto);
-                if (user!=null)
+                var user = _userManager.Login(loginDto);
+                if (user.Data!=null)
                 {
-                    var token = Generate(user);
-                        HttpContext.Session.SetString($"{user.ID}_user",JsonConvert.SerializeObject(user));
-                        HttpContext.Session.SetString($"{user.ID}_token",token);
-                    return Ok(token);
+                    string token = Generate(user.Data);
+                        //HttpContext.Session.SetString($"{user.ID}_user",JsonConvert.SerializeObject(user));
+                        //HttpContext.Session.SetString($"{user.ID}_token",token);
+                    return Ok(new LoginResponse(user.Data,user.ErrorCode,user.Description,token));
                 }
-                return NotFound("User not found");
+                return BadRequest(new LoginResponse(user.Data,ErrorCodes.UserNotFound, "User not found",null));
             }
             catch (Exception ex)
             {
                 _logger.LogCritical("UserController - Login", ex);
-                return BadRequest(new Response<bool>(ErrorCodes.Unexpected, "Un expected error in login - userControler"));
+                return BadRequest(new LoginResponse(null,ErrorCodes.Unexpected, "Unexpected error in login - userControler", null));
             }
         }
         
@@ -143,31 +143,17 @@ namespace Controllers
         var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
               _configuration["Jwt:Audience"],
               claims,
-              expires: DateTime.Now.AddMinutes(15),
+              expires: DateTime.UtcNow.AddMinutes(15),
               signingCredentials: credentials);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-
-        private UserDto Authenticate(LoginDto loginDto)
-        {
-            var islogin = _userManager.Login(loginDto);
-            if (islogin.ErrorCode == 0)
-            {
-                var user = _userManager.GetUserByEmail(loginDto.UserName);
-                return user.Data;
-            }
-            return null;
-          
-        }
-
         [AllowAnonymous]
         [HttpPut]
         public async Task<IActionResult> ResetPassword(ResetPasswordDto resetPasswordDto)
         {
             try
             {
-
                 Response<bool> resetPass = await _userManager.ResetPassword(resetPasswordDto);
                 if (resetPass.ErrorCode == 0) return Ok(resetPass);
                 else return BadRequest(resetPass);
