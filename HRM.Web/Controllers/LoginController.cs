@@ -9,36 +9,36 @@ using System.Security.Claims;
 
 namespace HRM.Web.Controllers
 {
+
     public class LoginController : Controller 
     {
+        private readonly ValidateToken _validateToken;
         private readonly ILogger<LoginController> _logger;
         private readonly HttpClient _httpClient;
-        public LoginController(ILogger<LoginController> logger,HttpClient httpClient)
+        public LoginController(ILogger<LoginController> logger,HttpClient httpClient, ValidateToken validateToken)
         {
             _logger = logger;
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri(" https://localhost:7266/");
             _httpClient.DefaultRequestHeaders.Accept.Clear();
             _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        }
-        public bool IsTokenInvalidOrEmpty(string token)
-        {
-            if (string.IsNullOrEmpty(token))
-            {
-                return true;
-            }
-
-            var jwtToken = new JwtSecurityToken(token);
-            return (jwtToken == null) || (jwtToken.ValidFrom > DateTime.UtcNow) || (jwtToken.ValidTo < DateTime.UtcNow);
+            _validateToken = validateToken;
         }
 
-        public IActionResult Login()
+
+        public IActionResult Login(string returnUrl)
         {
             var token=HttpContext.Session.GetString("token");
             
-            if (IsTokenInvalidOrEmpty(token))
+            if (_validateToken.IsTokenInvalidOrEmpty(token))
             {
                 return View();
+            }
+            else 
+            if (!string.IsNullOrEmpty(returnUrl))//not working yet
+            {
+                ViewBag.ReturnUrl = returnUrl;
+                return RedirectToRoute(returnUrl);
             }
             else
             {
@@ -46,7 +46,7 @@ namespace HRM.Web.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> LoginAsync(LoginModel login,string returnUrl)
+        public async Task<IActionResult> LoginAsync(LoginModel login)
         {   
             var result = await _httpClient.PostAsJsonAsync<LoginModel>("api/User/Login", login);
             var response = await result.Content.ReadAsAsync<LoginResponse>();
@@ -55,7 +55,7 @@ namespace HRM.Web.Controllers
                 var jwt = response.Token;
                 var handler = new JwtSecurityTokenHandler();//remove
                 var Token = handler.ReadJwtToken(jwt);//remove
-                if (IsTokenInvalidOrEmpty(jwt))
+                if (_validateToken.IsTokenInvalidOrEmpty(jwt))
                 {
                     ModelState.AddModelError(string.Empty, "Not authorized");
                     return View(login);
@@ -75,18 +75,19 @@ namespace HRM.Web.Controllers
             }
             else if(response.Data==null && response.Token==null && response.ErrorCode!=0)
             {
-               // ViewBag.ReturnUrl = returnUrl;
                 ModelState.AddModelError(string.Empty, "User not Found ");
                 return View();
             }
             else
             {
-               // ViewBag.ReturnUrl = returnUrl;
                 ModelState.AddModelError(string.Empty, "Login Falied");
                 return View();
             }
 
         }
+        //logout controller->button->clear session
+        //logout->loginpage
+        //get_token->empty
         public IActionResult ResetPassword()
         {
             return View();

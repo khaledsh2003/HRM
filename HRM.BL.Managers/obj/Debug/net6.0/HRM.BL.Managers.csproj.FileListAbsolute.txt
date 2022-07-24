@@ -21,3 +21,11 @@ C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\HR
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\refint\HRM.BL.Managers.dll
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\HRM.BL.Managers.pdb
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\obj\Debug\net6.0\ref\HRM.BL.Managers.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\HRM.Web.deps.json
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\HRM.Web.runtimeconfig.json
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\appsettings.json
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\HRM.Web.staticwebassets.runtime.json
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\HRM.Web.exe
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\HRM.Web.dll
+C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.BL.Managers\bin\Debug\net6.0\HRM.Web.pdb

@@ -1,4 +1,4 @@
-﻿
+
 
 using Microsoft.EntityFrameworkCore;
 
@@ -15,12 +15,15 @@ namespace HRM.DAL.EF
         {
 
         }
+
+        string.IsNulll();
         public DbSet<UserEntity> Users  { get; set; }
         public DbSet<VacationEntity> Vacations { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HRM;Integrated Security=True");
         }
-
+        if(not cal)
+optionsBuilder.UseSqlServer(@"Data Source=")
     }
 }

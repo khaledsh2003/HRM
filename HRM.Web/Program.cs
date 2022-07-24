@@ -1,3 +1,7 @@
+using HRM.Web.Controllers;
+using HRM.Models;
+using HRM.Mapping;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,7 @@ builder.Services.AddSession();
 builder.Services.AddMvc();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddTransient<HttpClient>();
+builder.Services.AddTransient<MvcToDto>();
 builder.Services.AddControllers();
 
 

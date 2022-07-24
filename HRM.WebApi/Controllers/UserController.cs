@@ -36,11 +36,10 @@ namespace Controllers
             try 
             {
                 var managerID=Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
-                var userString=HttpContext.Session.GetString($"{managerID}_user");
-                var user = JsonConvert.DeserializeObject(userString);
-                Response<UserDto> newUser = await _userManager.Create(managerID, createUserDto);
-                if(newUser.ErrorCode==0) return Ok(newUser);
-                else return BadRequest(newUser);
+                var newUser = await _userManager.Create(managerID, createUserDto);
+                if (newUser.ErrorCode == ErrorCodes.Success) return Ok(new Response<UserDto>(newUser.Data));
+                else if (newUser.ErrorCode == ErrorCodes.UserAlreadyFound) return BadRequest(new Response<UserDto>(ErrorCodes.UserAlreadyFound, "User Already Found in Our Record"));
+                else return BadRequest(new Response<UserDto>(ErrorCodes.Unexpected, "Unexpected Error Occured"));
             }
             catch (Exception ex)
             {
