@@ -10,27 +10,21 @@ using System.Security.Claims;
 namespace HRM.Web.Controllers
 {
 
-    public class LoginController : Controller 
+    public class LoginController : BaseController 
     {
-        private readonly ValidateToken _validateToken;
         private readonly ILogger<LoginController> _logger;
-        private readonly HttpClient _httpClient;
-        public LoginController(ILogger<LoginController> logger,HttpClient httpClient, ValidateToken validateToken)
+        public LoginController(HttpClient _httpClient, ILogger<LoginController> logger,HttpClient httpClient):base(_httpClient)
         {
             _logger = logger;
-            _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri(" https://localhost:7266/");
-            _httpClient.DefaultRequestHeaders.Accept.Clear();
-            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            _validateToken = validateToken;
         }
-
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         public IActionResult Login(string returnUrl)
         {
-            var token=HttpContext.Session.GetString("token");
-            
-            if (_validateToken.IsTokenInvalidOrEmpty(token))
+            if (IsTokenInvalidOrEmpty())
             {
                 return View();
             }
@@ -52,20 +46,15 @@ namespace HRM.Web.Controllers
             var response = await result.Content.ReadAsAsync<LoginResponse>();
             if (response.Data != null && result.IsSuccessStatusCode)
             {
-                var jwt = response.Token;
-                var handler = new JwtSecurityTokenHandler();//remove
-                var Token = handler.ReadJwtToken(jwt);//remove
-                if (_validateToken.IsTokenInvalidOrEmpty(jwt))
+                if (IsTokenInvalidOrEmpty())
                 {
                     ModelState.AddModelError(string.Empty, "Not authorized");
                     return View(login);
                 }
-                var type = Token.Claims.First(claim => claim.Type == ClaimTypes.Role).Value;//remove it
                 HttpContext.Session.SetString("user", JsonConvert.SerializeObject(response.Data));
                 HttpContext.Session.SetString("token", response.Token);
-                if (type==UserType.manager.ToString())
+                if (response.Data.Type==UserType.manager)
                 {
-
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -85,9 +74,12 @@ namespace HRM.Web.Controllers
             }
 
         }
-        //logout controller->button->clear session
-        //logout->loginpage
-        //get_token->empty
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            var user = GetToken();
+            return View("Login");
+        }
         public IActionResult ResetPassword()
         {
             return View();

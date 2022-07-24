@@ -10693,19 +10693,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kshah\\.nuget\\packages\\": {}
+    "C:\\Users\\ahmed\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.WebApi\\HRM.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.WebApi\\HRM.WebApi.csproj",
       "projectName": "HRM.WebApi",
-      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.WebApi\\HRM.WebApi.csproj",
-      "packagesPath": "C:\\Users\\kshah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.WebApi\\obj\\",
+      "projectPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.WebApi\\HRM.WebApi.csproj",
+      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kshah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10719,14 +10719,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.BL.Interface\\HRM.BL.Interface.csproj": {
-              "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.BL.Interface\\HRM.BL.Interface.csproj"
+            "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.BL.Interface\\HRM.BL.Interface.csproj": {
+              "projectPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.BL.Interface\\HRM.BL.Interface.csproj"
             },
-            "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.BL.Managers\\HRM.BL.Managers.csproj": {
-              "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.BL.Managers\\HRM.BL.Managers.csproj"
+            "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.BL.Managers\\HRM.BL.Managers.csproj": {
+              "projectPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.BL.Managers\\HRM.BL.Managers.csproj"
             },
-            "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL.EF\\HRM.DAL.EF.csproj": {
-              "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.DAL.EF\\HRM.DAL.EF.csproj"
+            "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.DAL.EF\\HRM.DAL.EF.csproj": {
+              "projectPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.DAL.EF\\HRM.DAL.EF.csproj"
             }
           }
         }
@@ -10812,7 +10812,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   },

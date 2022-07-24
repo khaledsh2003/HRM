@@ -82,10 +82,10 @@ namespace HRM.DAL.EF.Migrations
                     b.Property<string>("Note")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("StartingDate")
+                    b.Property<DateTime?>("StartingDate")
                         .HasColumnType("Date");
 
-                    b.Property<int>("Status")
+                    b.Property<int?>("Status")
                         .HasColumnType("int");
 
                     b.Property<int>("Type")

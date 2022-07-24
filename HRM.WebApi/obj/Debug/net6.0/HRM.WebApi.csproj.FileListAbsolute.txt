@@ -304,3 +304,6 @@ C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Microso
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\kshah\OneDrive\Documents\GitHub\HRM\HRM.WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\ahmed\source\repos\HRM\HRM\HRM.WebApi\obj\Debug\net6.0\HRM.WebApi.dll
+C:\Users\ahmed\source\repos\HRM\HRM\HRM.WebApi\obj\Debug\net6.0\refint\HRM.WebApi.dll
+C:\Users\ahmed\source\repos\HRM\HRM\HRM.WebApi\obj\Debug\net6.0\HRM.WebApi.pdb

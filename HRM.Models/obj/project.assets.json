@@ -1144,19 +1144,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kshah\\.nuget\\packages\\": {}
+    "C:\\Users\\ahmed\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Models\\HRM.Models.csproj",
+      "projectUniqueName": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.Models\\HRM.Models.csproj",
       "projectName": "HRM.Models",
-      "projectPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Models\\HRM.Models.csproj",
-      "packagesPath": "C:\\Users\\kshah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kshah\\OneDrive\\Documents\\GitHub\\HRM\\HRM.Models\\obj\\",
+      "projectPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.Models\\HRM.Models.csproj",
+      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ahmed\\source\\repos\\HRM\\HRM\\HRM.Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kshah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1208,7 +1208,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

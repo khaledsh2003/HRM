@@ -14,11 +14,13 @@ namespace HRM.Web.Controllers
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri(" https://localhost:7266/");
             _httpClient.DefaultRequestHeaders.Accept.Clear();
-            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));v
         }
+
+        public HttpClient httpClient {get;}
         public bool IsManager()
         {
-            var user = HttpContext.Session.GetString("user");//check if null or empty
+            var user = HttpContext.Session.GetString("user");
             if (!string.IsNullOrEmpty(user))
             {
                 var result = JsonConvert.DeserializeObject<UserDto>(user);
